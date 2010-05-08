@@ -1,0 +1,77 @@
+/**
+* Design elements for sidebar
+*/
+
+/* the document */
+div.dokuwiki div.page_with_sidebar {
+    margin-top: 4px;
+    margin-left:  0em;
+    margin-right: 0em;
+    padding-left: 1em;
+    text-align: justify;
+    width: 70%;
+    float: left;
+}
+
+/* div.dokuwiki pre {width: 100%;} */
+
+
+/* ---- Sidebar ---- */
+div.dokuwiki div#sidebar {
+    margin-top: 0;
+    margin-left:  0em;
+    margin-right: 15px;
+    padding-top: 0.5em;
+    padding-bottom: 0.7em;
+    padding-left: 0em;
+    float: right;
+    width: 17%;
+    line-height: 1.4em;
+    text-transform: lowercase;
+}
+
+
+div.dokuwiki div#sidebar ul {
+    list-style-type: none;
+    list-style-image: none;
+    line-height: 1.2em;
+    margin: 0;
+    padding-top: 0.2em;
+    padding-left: 1em;
+    padding-bottom: 0.3em;
+    /* padding: 0.2em 0 0.3em 1em; */ 
+}
+
+div.dokuwiki div#sidebar ul ul {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div.dokuwiki div#sidebar ul li.clear {
+    background-image: none;
+    padding-left:0.4em;
+}
+
+div.dokuwiki div#sidebar a {
+    color: __extern__;
+    text-decoration:none;
+    border: none;
+}
+
+div.dokuwiki div#sidebar a.noborder {
+    padding: 25px;
+}
+
+div.dokuwiki div#sidebar a:hover {
+    color: __text__;
+    text-decoration:underline; 
+}
+
+div.dokuwiki div#sidebar a.urlextern {
+    color: __extern__;
+    text-decoration:none;
+}
+
+/* special headlines */
+div.dokuwiki div#sidebar h1 {font-size: 100%; margin-left: 4px; margin-bottom: 0.5em; border-bottom: none;}
+
