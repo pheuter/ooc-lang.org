@@ -15,17 +15,17 @@
 	<script type="text/javascript" charset="utf-8" >
 	jQuery.noConflict(); jQuery(document).ready(function($) { $.syntax({root: "http://ooc-lang.org/lib/plugins/jquerysyntax/jquery-syntax/" }) });</script>
 	
-	<link rel="shortcut icon" href="http://ooc-lang.org/lib/tpl/lloyd/images/favicon.ico" />
+	<link rel="shortcut icon" href="/images/favicon.ico" />
 </head>
 <body>
-	<p class="navbar" align="right">
+	<div class="navbar" align="right">
 		<% if user_signed_in? %>
 		Signed in as <%= current_user.email %>. Not you?
 		<%= link_to "Sign out", destroy_user_session_path %>
 		<% else %>
-		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>.
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
 		<% end %>
-	</p>
+	</div>
 	
 	
 	<% flash.each do |name, msg| %>
