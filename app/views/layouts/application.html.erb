@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OocLang</title>
-  <%= stylesheet_link_tag :all %>
+  <title>ooc</title>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<p class="navbar" align="right">
+		<% if user_signed_in? %>
+		Signed in as <%= current_user.email %>. Not you?
+		<%= link_to "Sign out", destroy_user_session_path %>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>.
+		<% end %>
+	</p>
+	
+	
+	<% flash.each do |name, msg| %>
+	<div id="errorExplanation">
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	</div>
+	<% end %>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>
