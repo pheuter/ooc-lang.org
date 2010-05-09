@@ -43,6 +43,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.category = Category.where(:id => params[:category][:id])[0]
     @post.author = current_user.email
+    @post.content = RDiscount.new(params[:post][:markdown]).to_html
     
     respond_to do |format|
       if @post.save
@@ -59,6 +60,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
+    @post.content = RDiscount.new(params[:post][:markdown]).to_html
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
