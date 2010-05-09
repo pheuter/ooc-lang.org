@@ -68,6 +68,17 @@ input {
     background-color: LightGreen;
 }
 
+.alertbar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    line-height: 1.6em;
+    padding: 3px;
+    background-color: Red;
+}
+
 .navbar {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;
