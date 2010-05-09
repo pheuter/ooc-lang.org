@@ -1,4 +1,8 @@
 OocLang::Application.routes.draw do |map|
+  resources :posts
+
+  resources :categories
+
   devise_for :users
 
   get "home/index"
