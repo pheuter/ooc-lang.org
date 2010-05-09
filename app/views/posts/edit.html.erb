@@ -1,6 +1,23 @@
 <h1>Editing post</h1>
 
-<%= render 'form' %>
+<% form_for(@post) do |f| %>
+<%= f.error_messages %>
+<p>
+	<%= f.label :title %><br />
+	<%= f.text_field :title %>
+</p>
+<p>
+	<%= f.label :content %><br />
+	<%= f.text_area :content %>
+</p>
+<p>
+	<%= f.label :category %><br />
+	<%= select("category", "id", Category.find(:all).map { |c| [c.name, c.id] }) %>
+</p>
+<p>
+	<%= f.submit 'Edit' %>
+</p>
+<% end %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
