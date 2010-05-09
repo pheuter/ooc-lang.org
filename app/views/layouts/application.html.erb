@@ -12,12 +12,14 @@
 	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.2.min.js" ></script>
 	<script type="text/javascript" charset="utf-8" src="http://ooc-lang.org/lib/plugins/jquerysyntax/jquery-syntax/jquery.syntax.js" ></script>
 	<script type="text/javascript" charset="utf-8" src="http://ooc-lang.org/lib/plugins/jquerysyntax/jquery-syntax/jquery.syntax.cache.js" ></script>
-	<script type="text/javascript" charset="utf-8" >
-	jQuery.noConflict(); jQuery(document).ready(function($) { $.syntax({root: "http://ooc-lang.org/lib/plugins/jquerysyntax/jquery-syntax/" }) });</script>
+	<script type="text/javascript" charset="utf-8">
+	jQuery.noConflict(); jQuery(document).ready(function($) { $.syntax({root: "http://ooc-lang.org/lib/plugins/jquerysyntax/jquery-syntax/" }) });
+	</script>
 	
 	<link rel="shortcut icon" href="/images/favicon.ico" />
 </head>
 <body>
+	
 	<div class="navbar">
 		<% if user_signed_in? %>
 		Signed in as <%= current_user.email %>. Not you?

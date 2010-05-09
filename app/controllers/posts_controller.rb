@@ -41,7 +41,9 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-
+    @post.category = Category.where(:id => params[:category][:id])[0]
+    @post.author = current_user.email
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }

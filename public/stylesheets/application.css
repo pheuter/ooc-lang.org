@@ -58,6 +58,16 @@ input {
     background-color: #EDF2F7;
 }
 
+#menu-bar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    line-height: 1.6em;
+    padding: 3px;
+    background-color: LightGreen;
+}
+
 .navbar {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;

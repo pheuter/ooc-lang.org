@@ -15,7 +15,7 @@
   <tr>
     <td><%= post.title %></td>
     <td><%= post.author %></td>
-    <td><%= post.category %></td>
+    <td><%= post.category.name %></td>
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>

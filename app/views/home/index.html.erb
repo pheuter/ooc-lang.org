@@ -58,24 +58,13 @@ Most of the features above are already implemented, or in the process of being i
 </div>
 <div id='sidebar'>
 <p>
-	<span class="curid"><a href="/about" class="wikilink1" title="about">about</a></span><br/>
-	<a href="/blog" class="wikilink1" title="blog">blog</a><br/>
+	<%= link_to "posts", posts_path %>
 </p>
 </div>
-  <div class="clearer">&nbsp;</div>
+<div class="clearer">&nbsp;</div>
 
-  <div class="stylefoot">
-
-    <div class="bar" id="bar__bottom">
-      <div class="bar-left" id="bar__bottomleft">
-                      </div>
-      <div class="bar-right" id="bar__bottomright">
-      </div>
-      <div class="clearer"></div>
-    </div>
-
-  </div>
-
+<div class="bar" id="bar__bottom">
+</div>
 </div>
 
 <div align="center" style="color: black; font-size: 6pt;">
@@ -85,9 +74,16 @@ Most of the features above are already implemented, or in the process of being i
   <br/>
   2010, nddrylliog &amp; the ooc crew
 </div>
+<div class="clearer">&nbsp;</div>
 
-
-<div class="no"><img src="/lib/exe/indexer.php?id=about&amp;1273327580" width="1" height="1" alt=""  /></div>
+<div class="no">
+	<% if user_signed_in? %>
+		<div id="menu-bar">
+			<%= link_to "New category", new_category_path %> |
+			<%= link_to "New post", new_post_path %> 
+		</div>
+	<% end %>
+</div>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
