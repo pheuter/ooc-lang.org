@@ -8,7 +8,6 @@
 		<li><%= link_to 'New Category', new_category_path %></li>
 		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
 		<% else %>
-		<li><%= link_to "Sign up", new_user_registration_path %></li>
 		<li><%= link_to "Sign in", new_user_session_path %></li>
 		<% end %>
 	</ul>

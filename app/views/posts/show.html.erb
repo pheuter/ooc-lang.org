@@ -1,21 +1,48 @@
-<div id="maincol">
-<div class="article">
-	<h1 class="article-title"><%= link_to @post.title, @post%></h1>
-	<div class="article-meta">Published on <%= @post.created_at.strftime('%a %d %b, %Y') %> by <%=@post.author %> in <%= @post.category.name %></div>
+<div id="main-container">
 
-	<p><%= raw @post.content %>
+	<ul id="menu">
+		<li><%= link_to 'Home', home_index_path %></li>
+		<li><%= link_to 'Blog', posts_path%></li>
+		<% if user_signed_in? %>
+		<li><%= link_to 'New Post', new_post_path %></li>
+		<li><%= link_to 'New Category', new_category_path %></li>
+		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
+		<% else %>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+		<% end %>
+	</ul>
+	
+	<h1 id="web-title"><a href="/posts"><span class="emphasize">ooc</span> blog</a></h1>
+	<h2 id="web-subtitle"><%= Slogan.random %></h2>
+
+	<div id="maincol">
+		<div class="article">
+			<h1 class="article-title"><%= link_to @post.title, @post%></h1>
+			<div class="article-meta">Published on <%= @post.created_at.strftime('%a %d %b, %Y') %> by <%=@post.author %> in <%= @post.category.name %></div>
+
+			<p><%= raw @post.content %>
+		</div>
+		<br/><br/>
+	</div>
+
+	<div id="sidebar">
+		<h2 class="compact">Options</h2>
+		<ul class="compact">
+			<% if user_signed_in? %>
+			<li><%= link_to 'Edit', edit_post_path(@post) %></li>
+			<li><%= link_to 'Delete', @post, :confirm => "Are you sure?", :method => :delete %>
+			<% else %>
+			<li><%= link_to "Sign in", new_user_session_path %></li>
+			<% end %>
+		</ul>
+	</div>
 
 </div>
-<br/><br/>
-</div>
-<!-- / MAIN COLUMN -->
-<!-- SIDEBAR -->
-<div id="sidebar">
-<% if user_signed_in? %>
-<h2 class="compact">Options</h2>
-<ul class="compact">
-	<li><%= link_to 'Edit', edit_post_path(@post)%></li>
-	<li><%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %></li>
-</ul>
-<% end %>
+
+<div id="footer">
+	<div>
+	<h2 class="compact">Comments</h2>
+	<ul class="compact">
+		soon
+	</ul>
 </div>
