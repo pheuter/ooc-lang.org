@@ -1,93 +1,33 @@
-<div class="dokuwiki">
-  
-  <div class="stylehead">
+<div id="main-container">
 
-    <div class="header">
-      <div class="logo">
-        <a href="/"  name="dokuwiki__top" id="dokuwiki__top"  accesskey="h" title="[ALT+H]">ooc</a></div>
-      <div class="tagline">out of curiosity</div>
-      <div class="clearer"></div>
-    </div>
+	<ul id="menu">
+		<li><%= link_to 'Home', home_index_path %></li>
+		<li><%= link_to 'Blog', posts_path%></li>
+		<% if user_signed_in? %>
+		<li><%= link_to 'New Post', new_post_path %></li>
+		<li><%= link_to 'New Category', new_category_path %></li>
+		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
+		<% else %>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+		<% end %>
+	</ul>
+	
+	<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span></a></h1>
+	<h2 id="web-subtitle"><%= Slogan.random %></h2>
 
-    <div class="bar" id="bar__top">
-      <div class="bar-left" id="bar__topleft"></div>
-      <div class="bar-right" id="bar__topright"></div>
-      <div class="clearer"></div>
-    </div> 
-  </div>
-  
-    <div class="page_with_sidebar">
-    
-<p>ooc is a modern, <a href="http://github.com/nddrylliog/rock" class="urlextern" target="_blank" title="http://github.com/nddrylliog/rock"  rel="nofollow">self-hosting</a>, object-oriented, functional-ish, high-level, low-level sexy programming language, starring <a href="http://github.com/nddrylliog/bootcamp/tree/master/source/closures" class="urlextern" target="_blank" title="http://github.com/nddrylliog/bootcamp/tree/master/source/closures"  rel="nofollow">closures</a>, <a href="http://github.com/nddrylliog/bootcamp/tree/master/source/interfaces" class="urlextern" target="_blank" title="http://github.com/nddrylliog/bootcamp/tree/master/source/interfaces"  rel="nofollow">interfaces</a>, <a href="http://github.com/nddrylliog/bootcamp/tree/master/source/enums" class="urlextern" target="_blank" title="http://github.com/nddrylliog/bootcamp/tree/master/source/enums"  rel="nofollow">enums</a>, garbage collection.. It strives to be powerful, modular, extensible, portable, yet simple and fast. 
-</p>
-
-<p>
-ooc translates to <a href="http://en.wikipedia.org/wiki/C99" class="urlextern" target="_blank" title="http://en.wikipedia.org/wiki/C99"  rel="nofollow">C99</a> via <a href="http://github.com/nddrylliog/rock" class="urlextern" target="_blank" title="http://github.com/nddrylliog/rock"  rel="nofollow">rock</a>, our self-hosting compiler. Targetting C makes it easy to debug, nice to interface with, ubiquitous, and you can use all your familiar tools: GDB, Valgrind, gprofÉ
-</p>
-
-<p>
-We&#039;ve spent a hard long time thinking about the syntax, making it a challenge to write unreadable ooc code.
-</p>
-
-<p>
-It is currently under heavy development - a lot cool stuff is happening . Join us at <a href="http://freenode.net/" class="urlextern" target="_blank" title="http://freenode.net/"  rel="nofollow">#ooc-lang</a>, hack with us on <a href="http://github.com/languages/ooc" class="urlextern" target="_blank" title="http://github.com/languages/ooc"  rel="nofollow">github</a>, follow us on <a href="http://twitter.com/ooc_lang" class="urlextern" target="_blank" title="http://twitter.com/ooc_lang"  rel="nofollow">twitter</a>!
-</p>
-
-<p>
-All our code are belong to <a href="http://github.com/nddrylliog/rock/blob/master/LICENSE" class="urlextern" target="_blank" title="http://github.com/nddrylliog/rock/blob/master/LICENSE"  rel="nofollow">BSD</a>.
-</p>
-
-<h3 class="sectionedit1"><a name="a_tour_in_ooc_land" id="a_tour_in_ooc_land">A tour in ooc land</a></h3>
-<div class='level3'>
-
-<p>
-
-<pre class="syntax brush-ooc">
-&quot;Hi, softer world =)&quot; println()
-</pre>
-</p>
-
-<br/>
-<hr/>
-<br/>
-<p>
-Most of the features above are already implemented, or in the process of being implemented. Check out the code at <a href="http://github.com/nddrylliog/ooc" class="urlextern" target="_blank" title="http://github.com/nddrylliog/ooc"  rel="nofollow">github</a> Stay tuned on the #ooc-lang channel on Freenode, on the <a href="http://ooc-lang.org/blog/" class="urlextern" target="_blank" title="http://ooc-lang.org/blog/"  rel="nofollow">blog</a>, and <a href="http://twitter.com/ooc_lang" class="urlextern" target="_blank" title="http://twitter.com/ooc_lang"  rel="nofollow">follow us on twitter</a>!
-</p>
+	<div id="maincol">
+		<p>Life is good</p>
+	</div>
 
 </div>
-</div>
-<div id='sidebar'>
-<p>
-	<%= link_to "blog", posts_path %>
-</p>
-</div>
-<div class="clearer">&nbsp;</div>
 
-<div class="bar" id="bar__bottom">
+<div id="footer">
+	<div>
+	<h2 class="compact">Recent Articles</h2>
+	<ul class="compact">
+		<% Post.find(:all, :order => 'created_at DESC', :limit => 5).each do |post| %>
+		<li><%= link_to post.title, post %> <span class="date"><%= post.created_at.strftime("%m/%d/%Y") %></span></li>
+		<% end %>
+	</ul>
 </div>
-</div>
-
-<div align="center" style="color: black; font-size: 6pt;">
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" />
-  </a>
-  <br/>
-  2010, nddrylliog &amp; the ooc crew
-</div>
-<div class="clearer">&nbsp;</div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-8462936-3");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-
-<script type="text/javascript">
-_qoptions={
-qacct:"p-b0LYWlTl-2J7c"
-};
-</script>

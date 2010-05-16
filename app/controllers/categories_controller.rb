@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  layout "blog"
   
   def index
     @categories = Category.all
