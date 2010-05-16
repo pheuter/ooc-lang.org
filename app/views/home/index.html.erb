@@ -43,7 +43,7 @@ All our code are belong to <a href="http://github.com/nddrylliog/rock/blob/maste
 <p>
 
 <pre class="syntax brush-ooc">
-println(&quot;Hi, softer world =)&quot;)
+&quot;Hi, softer world =)&quot; println()
 </pre>
 </p>
 
@@ -58,7 +58,7 @@ Most of the features above are already implemented, or in the process of being i
 </div>
 <div id='sidebar'>
 <p>
-	<%= link_to "posts", posts_path %>
+	<%= link_to "blog", posts_path %>
 </p>
 </div>
 <div class="clearer">&nbsp;</div>
@@ -75,15 +75,6 @@ Most of the features above are already implemented, or in the process of being i
   2010, nddrylliog &amp; the ooc crew
 </div>
 <div class="clearer">&nbsp;</div>
-
-<div class="no">
-	<% if user_signed_in? %>
-		<div id="menu-bar">
-			<%= link_to "New category", new_category_path %> |
-			<%= link_to "New post", new_post_path %> 
-		</div>
-	<% end %>
-</div>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

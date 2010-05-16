@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  layout "blog"
   
   def index
     @posts = Post.all

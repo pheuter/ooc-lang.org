@@ -1,10 +1,19 @@
-<p class="notice"><%= notice %></p>
+<div id="maincol">
+<div class="article">
+	<h1 class="article-title"><%= link_to @category.name, @category%></h1>
+	<div class="article-meta">Created at <%= @category.created_at.strftime('%a %d %b, %Y') %></div>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+</div>
+<br/><br/>
+</div>
+<!-- / MAIN COLUMN -->
+<!-- SIDEBAR -->
+<div id="sidebar">
+<% if user_signed_in? %>
+<h2 class="compact">Options</h2>
+<ul class="compact">
+	<li><%= link_to 'Edit', edit_category_path(@category)%></li>
+	<li><%= link_to 'Delete', @category, :confirm => 'Are you sure?', :method => :delete %></li>
+</ul>
+<% end %>
+</div>

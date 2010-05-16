@@ -1,29 +1,20 @@
-<h1>Listing posts</h1>
+<div id="maincol">
+<% @posts.each do |post|%>
+<div class="article">
+	<h1 class="article-title"><%= link_to post.title, post%></h1>
+	<div class="article-meta">Published on <%= post.created_at.strftime('%a %d %b, %Y') %> by <%=post.author %> in <%= post.category.name %></div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Category</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.author %></td>
-    <td><%= post.category.name %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<p><%= raw post.content %>
+</div>
 <% end %>
-</table>
+<br/><br/>
+</div>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
+<div id="sidebar">
+<h2 class="compact">Categories</h2>
+<ul class="compact">
+	<% Category.all.each do |c| %>
+		<li><%= link_to c.name, c %></li>
+	<% end %>
+</ul>
+</div>

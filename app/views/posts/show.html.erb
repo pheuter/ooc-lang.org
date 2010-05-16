@@ -1,25 +1,21 @@
-<p class="notice"><%= notice %></p>
+<div id="maincol">
+<div class="article">
+	<h1 class="article-title"><%= link_to @post.title, @post%></h1>
+	<div class="article-meta">Published on <%= @post.created_at.strftime('%a %d %b, %Y') %> by <%=@post.author %> in <%= @post.category.name %></div>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+	<p><%= raw @post.content %>
 
-<p>
-  <b>Author:</b>
-  <%= @post.author %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @post.category.name %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= raw @post.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+</div>
+<br/><br/>
+</div>
+<!-- / MAIN COLUMN -->
+<!-- SIDEBAR -->
+<div id="sidebar">
+<% if user_signed_in? %>
+<h2 class="compact">Options</h2>
+<ul class="compact">
+	<li><%= link_to 'Edit', edit_post_path(@post)%></li>
+	<li><%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %></li>
+</ul>
+<% end %>
+</div>
