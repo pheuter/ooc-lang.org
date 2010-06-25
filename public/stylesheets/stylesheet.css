@@ -1,267 +1,256 @@
-/**
-* Stylesheet for the Typo E-mag HTML template.
-* (c) 2009, Matìj Grabovský
-* 
-* Oi.
-**/
-/**
-* display, float, clear, width, height, margin, padding, vertical-align
-* border, outline, background, list-style
-* text-align, text-indent, text-transform, text-decoration, font, font-style, font-size, color
-**/
 body {
-    background: white url(../images/pattern-bg.gif) repeat-x;
-    font: 10pt/1.8em Georgia, 'Times New Roman', Times, serif;
-    color: #444;
+  background: white url(../images/pattern-bg.gif) repeat-x;
+  font: 10pt/1.8em Georgia, 'Times New Roman', Times, serif;
+  color: #444;
 }
 a {
-    padding: 1px 2px;
-    border-bottom: 1px solid #666;
-    outline: none;
-    color: #666;
-    text-decoration: none;
+  padding: 1px 2px;
+  border-bottom: 1px solid #666;
+  outline: none;
+  color: #666;
+  text-decoration: none;
 }
 a:hover {
-    border: none;
-    background-color: #E6E6E6;
-    color: black;
+  border: none;
+  background-color: #E6E6E6;
+  color: black;
 }
 h1 a, h1 a:hover {
-    padding: inherit;
-    border: inherit;
-    background: inherit;
-    font: inherit;
-    color: inherit;
+  padding: inherit;
+  border: inherit;
+  background: inherit;
+  font: inherit;
+  color: inherit;
 }
 h2.compact {
-    font: 1.5em/1.8em Georgia, 'Times New Roman', Times, serif;
+  font: 1.5em/1.8em Georgia, 'Times New Roman', Times, serif;
 }
 ul.compact {
-    margin: 0 0 1px .5em;
+  margin: 0 0 1px .5em;
 }
 ul.compact a {
-    border: none;
+  border: none;
 }
 p {
-    margin-bottom: 1.8em;
-    text-align: justify;
-    text-indent: 1.8em;
+  margin-bottom: 1.8em;
+  text-align: justify;
+  text-indent: 1.8em;
 }
 .article .article-meta + p {
-    text-indent: 0;
+  text-indent: 0;
 }
 img {
-    padding: 6px;
-    border: 1px solid #666;
-    background-color: white;
+  padding: 6px;
+  border: 1px solid #666;
+  background-color: white;
 }
 img.left {
-    float: left;
-    margin: 0 1.3em .5em 0;
+  float: left;
+  margin: 0 1.3em .5em 0;
 }
 img.right {
-    float: right;
-    margin: 0 0 .5em 1.3em;
+  float: right;
+  margin: 0 0 .5em 1.3em;
 }
 .logotrade {
-    vertical-align: 100%;
-    font-size: .3em;
+  vertical-align: 100%;
+  font-size: .3em;
 }
 
 #main-container {
-    display: block;
-    width: 885px;
-    margin: 17px auto 50px auto;
+  display: block;
+  width: 885px;
+  margin: 17px auto 50px auto;
 }
 
 #menu {
-    width: 1000px;
-    height: 50px;
-    padding-top: 8px;
-    list-style: none;
-    text-align: center;
-    text-transform: uppercase;
-    font: 0.8em/1em Georgia, 'Times New Roman', Times, serif;
+  width: 1000px;
+  height: 50px;
+  padding-top: 8px;
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  font: 0.8em/1em Georgia, 'Times New Roman', Times, serif;
 }
 #menu li {
-    display: inline;
-    margin: 0 10px;
-    vertical-align: middle;
+  display: inline;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 #menu li a {
-    padding: 8px 10px;
-    border: none;
+  padding: 8px 10px;
+  border: none;
 }
 #menu li.current a {
-    background-color: #c40000;
-    color: white;
+  background-color: #c40000;
+  color: white;
 }
 
 #web-title {
-    margin: 0 0 0px 0;
-    font: 4.5em Georgia, 'Times New Roman', Times, serif;
+  margin: 0 0 0px 0;
+  font: 4.5em Georgia, 'Times New Roman', Times, serif;
 }
 #web-title .emphasize {
-    font-style: italic;
-    color: #4D4D4D;
+  font-style: italic;
+  color: #4D4D4D;
 }
 #web-subtitle {
-    font: 1.0em Georgia, 'Times New Roman', Times, serif;
+  font: 1.0em Georgia, 'Times New Roman', Times, serif;
 }
 
 #maincol {
-    float: left;
-    width: 550px;
-    margin: 60px 35px 30px 0;
+  float: left;
+  width: 550px;
+  margin: 60px 35px 30px 0;
 }
 #sidebar {
-    background-color: #ccc; 
-    -moz-border-radius: 5px; 
-    -webkit-border-radius: 5px; 
-    border: 1px solid #C0C0C0; 
-    padding: 5px;
-    float: left;
-    width: 200px;
-    margin-top: 20px;
+  background-color: #ccc; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  border: 1px solid #C0C0C0; 
+  padding: 5px;
+  float: left;
+  width: 200px;
+  margin-top: 20px;
 }
 #sidebar h2 {
-    color: #666;
-    text-align: center;
+  color: #666;
+  text-align: center;
 }
 
 .article {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 .article p {
-    font-family: 'Cantarell', arial, serif;
+  font-family: 'Cantarell', arial, serif;
 }
 .article:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 .article + .article {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid #cfcfcf;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #cfcfcf;
 }
 .article-title {
-    margin: 5px 0 6px 0;
-    font-family: 'Inconsolata', arial, serif;
-    font-size: 35px;
+  margin: 5px 0 6px 0;
+  font-family: 'Inconsolata', arial, serif;
+  font-size: 35px;
 }
 .article-title a:hover {
-    color: #444;
+  color: #444;
 }
 .article-meta {
-    margin-bottom: 30px;
-    font: italic .7em/1.5em Georgia, 'Times New Roman', Times, serif;
-    color: #666;
+  margin-bottom: 30px;
+  font: italic .7em/1.5em Georgia, 'Times New Roman', Times, serif;
+  color: #666;
 }
 .readmore {
-    margin-left: 1em;
-    border: none;
-    font: italic 1.3em Georgia, 'Times New Roman', Times, serif;
+  margin-left: 1em;
+  border: none;
+  font: italic 1.3em Georgia, 'Times New Roman', Times, serif;
 }
 
 #pages {
-    margin: 10px 0 40px 0;
+  margin: 10px 0 40px 0;
 }
 #pages a {
-    height: 14px;
-    margin: 0 1px;
-    padding: 2px 5px;
-    border: 1px solid #cfcfcf;
+  height: 14px;
+  margin: 0 1px;
+  padding: 2px 5px;
+  border: 1px solid #cfcfcf;
 }
 #pages a.current {
-    margin-left: 5px;
-    background-color: #c40000;
-    color: white;
+  margin-left: 5px;
+  background-color: #c40000;
+  color: white;
 }
 
 #footer {
-    clear: both;
-    width: 885px;
-    height: 160px;
-    margin: 0    auto;
-    padding: 20px 0;
-    border-top: 2px solid #cfcfcf;
-    line-height: 1.6em;
+  clear: both;
+  width: 885px;
+  height: 160px;
+  margin: 0    auto;
+  padding: 20px 0;
+  border-top: 2px solid #cfcfcf;
+  line-height: 1.6em;
 }
 #footer > div {
-    float: left;
-    width: 700px;
-    margin-right: 35px;
+  float: left;
+  width: 700px;
+  margin-right: 35px;
 }
 #footer > #fullwidth {
-    float: none;
-    width: 100%;
-    text-align: center;
-    font-size: .9em;
-    color: #666;
+  float: none;
+  width: 100%;
+  text-align: center;
+  font-size: .9em;
+  color: #666;
 }
 #footer .date {
-    vertical-align: .15em;
-    font-size: .75em;
-    color: #666;
+  vertical-align: .15em;
+  font-size: .75em;
+  color: #666;
 }
 .fieldWithErrors {
-    padding: 2px;
-    background-color: red;
-    display: table;
+  padding: 2px;
+  background-color: red;
+  display: table;
 }
 
 #errorExplanation {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    width: 200px;
-    padding: 7px;
-    margin-bottom: 20px;
-    background-color: #FF7F00;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 200px;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #FF7F00;
 }
 
 #errorExplanation h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    background-color: #c00;
-    color: #fff;
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
 }
 
 #errorExplanation p {
-    color: #333;
-    margin-bottom: 0;
-    padding: 5px;
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
 }
 
 #errorExplanation ul li {
-    font-size: 12px;
-    list-style: square;
+  font-size: 12px;
+  list-style: square;
 }
 
 #alertbar {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: black;
-    font-size: 12px;
-    text-align: left;
-    line-height: 1.6em;
-    padding: 3px;
-    background-color: #B3B3B3;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.6em;
+  padding: 3px;
+  background-color: #B3B3B3;
 }
 
 form textarea {
-    font-family: 'Cantarell', arial, serif;
-    font-size: 15px;
-    height: 250px;
-    width: 500px;
+  font-family: 'Cantarell', arial, serif;
+  font-size: 15px;
+  height: 250px;
+  width: 500px;
 }
 
 #post_title {
-    font-family: 'Inconsolata', arial, serif;
-    font-size: 30px;
+  font-family: 'Inconsolata', arial, serif;
+  font-size: 30px;
 }
 
 form label {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }

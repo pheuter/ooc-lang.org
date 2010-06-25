@@ -7,26 +7,25 @@
 		<li><%= link_to 'New Post', new_post_path %></li>
 		<li><%= link_to 'New Category', new_category_path %></li>
 		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
-		<% else %>
-		<li><%= link_to "Sign in", new_user_session_path %></li>
-		<% end %>
-	</ul>
-	
-	<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span></a></h1>
-	<h2 id="web-subtitle"><%= Slogan.random %></h2>
+			<% else %>
+			<li><%= link_to "Sign in", new_user_session_path %></li>
+			<% end %>
+		</ul>
 
-	<div id="maincol">
-		<p>Life is good</p>
+		<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span></a></h1>
+		<h2 id="web-subtitle"><%= Slogan.random %></h2>
+
+		<div id="maincol">
+			<code>"Hello World" println()</code>
+		</div>
+
 	</div>
 
-</div>
-
-<div id="footer">
-	<div>
-	<h2 class="compact">Recent Articles</h2>
-	<ul class="compact">
-		<% Post.find(:all, :order => 'created_at DESC', :limit => 5).each do |post| %>
-		<li><%= link_to post.title, post %> <span class="date"><%= post.created_at.strftime("%m/%d/%Y") %></span></li>
-		<% end %>
-	</ul>
-</div>
+	<div id="footer">
+		<h2 class="compact">Recent Articles</h2>
+		<ul class="compact">
+			<% Post.find(:all, :order => 'created_at DESC', :limit => 5).each do |post| %>
+			<li><%= link_to post.title, post %> <span class="date"><%= post.created_at.strftime("%m/%d/%Y") %></span></li>
+			<% end %>
+		</ul>
+  </div>
