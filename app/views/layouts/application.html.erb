@@ -9,13 +9,14 @@
 	<%= csrf_meta_tag %>
 	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.2.min.js" ></script>
 	<script type="text/javascript" charset="utf-8" src="/javascripts/jquery-syntax/jquery.syntax.min.js" ></script>
+	<script src='http://www.go2web20.net/twitterfollowbadge/1.0/badge.js' type='text/javascript'></script>
 	<link rel="shortcut icon" href="/images/favicon.ico" />
 </head>
 <body>
 	<div id="alertbar">
 		As this site is still under heavy development, expect discontinuities such as database resets.
 	</div>
-
+	
 	<% flash.each do |name, msg| %>
 	<div id="errorExplanation">
 		<%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -30,6 +31,12 @@
 		jQuery(function($) {
 		    $.syntax({root: "/javascripts/jquery-syntax/"});
 		});
+		tfb.account = 'ooc_lang';
+		tfb.label = 'follow-us';
+		tfb.color = '#7d7d7d';
+		tfb.side = 'r';
+		tfb.top = 136;
+		tfb.showbadge();
 	</script>
 </body>
 </html>

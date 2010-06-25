@@ -11,9 +11,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  border: none;
-  background-color: #E6E6E6;
-  color: black;
+  text-shadow: 0.02em 0.02em grey;
 }
 h1 a, h1 a:hover {
   padding: inherit;
@@ -40,17 +38,7 @@ p {
   text-indent: 0;
 }
 img {
-  padding: 6px;
-  border: 1px solid #666;
-  background-color: white;
-}
-img.left {
-  float: left;
-  margin: 0 1.3em .5em 0;
-}
-img.right {
-  float: right;
-  margin: 0 0 .5em 1.3em;
+  border: none;
 }
 .logotrade {
   vertical-align: 100%;
