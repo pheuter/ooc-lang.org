@@ -245,7 +245,7 @@ form textarea {
   width: 500px;
 }
 
-#post_title {
+input {
   font-family: 'Inconsolata', arial, serif;
   font-size: 30px;
 }
