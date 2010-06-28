@@ -3,6 +3,7 @@
 	<ul id="menu">
 		<li><%= link_to 'Home', home_index_path, :class => "current" %></li>
 		<li><%= link_to 'Blog', posts_path%></li>
+		<li><%= link_to 'install', "#install", :rel => "facebox", :style => "color:blue" %></li>
 		<% if user_signed_in? %>
 		<li><%= link_to 'New Post', new_post_path %></li>
 		<li><%= link_to 'New Category', new_category_path %></li>
@@ -16,11 +17,7 @@
 		<h2 id="web-subtitle"><%= Slogan.random %></h2>
 
 		<div id="maincol">
-			<h2>Install ooc now!</h2>
-			<br/><br/>
-			curl: <pre>bash -c "`curl -L http://ooc.heroku.com/install.sh`"</pre>
-			<br/>
-			wget: <pre>bash -c "`wget -O - http:/ooc.heroku.com/install.sh`"</pre>
+			<p>Welcome</p>
 		</div>
 		
 	</div>
@@ -33,3 +30,11 @@
 			<% end %>
 		</ul>
   </div>
+
+<div style="width:700px" id="install">
+	<h2>Install ooc now!</h2>
+	<br/>
+	curl: <code>bash -c "`curl -L http://ooc.heroku.com/install.sh`"</code>
+	<br/><br/>
+	wget: <code>bash -c "`wget -O - http://ooc.heroku.com/install.sh`"</code>
+</div>
