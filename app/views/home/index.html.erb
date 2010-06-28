@@ -3,14 +3,12 @@
 	<ul id="menu">
 		<li><%= link_to 'Home', home_index_path, :class => "current" %></li>
 		<li><%= link_to 'Blog', posts_path%></li>
-		<li><%= link_to 'install', "#install", :rel => "facebox", :style => "color:blue" %></li>
 		<% if user_signed_in? %>
-		<li><%= link_to 'New Post', new_post_path %></li>
-		<li><%= link_to 'New Category', new_category_path %></li>
 		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
-			<% else %>
-			<li><%= link_to "Sign in", new_user_session_path %></li>
-			<% end %>
+		<% else %>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+		<% end %>
+		<li><%= link_to 'install', "#install", :rel => "facebox", :style => "color:blue" %></li>
 	</ul>
 
 		<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span></a></h1>
