@@ -38,7 +38,7 @@ function intro {
 }
 
 function do_install {
-    read -p "Enter installation directory [$HOME/rock_dist]: " f
+    read -p "Enter installation directory [$HOME/rock]: " f
     if [[ ! -a $f ]]; then
         read -p "$f doesn't exist, create? [y/N] " c
         if [[ $c == y* ]]; then
@@ -59,9 +59,9 @@ function do_install {
     cd "$f"
     
     if [ -x "`which curl`" ]; then
-        curl -L -\# "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha1-bootstrap-only.tar.gz2" | tar -zxf -
+        curl -L -\# "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha3-bootstrap-only.tar.gz2" | tar -zxf -
     elif [ -x "`which wget`" ]; then
-        wget --progress=bar "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha1-bootstrap-only.tar.gz2" -O - | tar -zxf -
+        wget --progress=bar "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha3-bootstrap-only.tar.gz2" -O - | tar -zxf -
     fi
     
     mkdir bin
