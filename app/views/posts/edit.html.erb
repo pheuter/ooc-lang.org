@@ -1,52 +1,30 @@
-<div id="main-container">
+<div class="content">
 
-	<ul id="menu">
-		<li><%= link_to 'Home', home_index_path, :class => "current" %></li>
-		<li><%= link_to 'Blog', posts_path%></li>
-		<% if user_signed_in? %>
-		<li><%= link_to 'New Post', new_post_path %></li>
-		<li><%= link_to 'New Category', new_category_path %></li>
-		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
-		<% else %>
-		<li><%= link_to "Sign in", new_user_session_path %></li>
-		<% end %>
-	</ul>
+	<div class="inner-content group">
 	
-	<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span> blog</a></h1>
-	<h2 id="web-subtitle"><%= Slogan.random %></h2>
+		<div class="main group">
+		
+			<% form_for(@post) do |f| %>
+			<%= f.error_messages %>
+			<p>
+				<%= f.label :title %><br /><br />
+				<%= f.text_field :title %>
+			</p>
+			<p>
+				<%= f.label :markdown %><br /><br />
+				<%= f.text_area :markdown %>
+			</p>
+			<p>
+				<%= f.label :category %><br /><br />
+				<%= select("category", "id", Category.find(:all).map { |c| [c.name, c.id] }) %>
+			</p>
+			<p>
+				<%= f.submit 'Edit' %>
+			</p>
+			<% end %>
+														
+		</div><!-- end .main -->
+	
+	</div><!-- end. inner-content -->
 
-	<div id="maincol">
-		<% form_for(@post) do |f| %>
-		<%= f.error_messages %>
-		<p>
-			<%= f.label :title %><br /><br />
-			<%= f.text_field :title %>
-		</p>
-		<br />
-		<p>
-			<%= f.label :markdown %><br /><br />
-			<%= f.text_area :markdown %>
-		</p>
-		<br />
-		<p>
-			<%= f.label :category %><br /><br />
-			<%= select("category", "id", Category.find(:all).map { |c| [c.name, c.id] }) %>
-		</p>
-		<br />
-		<p>
-			<%= f.submit 'Edit' %>
-		</p>
-		<% end %>
-	</div>
-
-</div>
-
-<div id="footer">
-	<div>
-	<h2 class="compact">Recent Articles</h2>
-	<ul class="compact">
-		<% Post.find(:all, :order => 'created_at DESC', :limit => 5).each do |post| %>
-		<li><%= link_to post.title, post %> <span class="date"><%= post.created_at.strftime("%m/%d/%Y") %></span></li>
-		<% end %>
-	</ul>
-</div>
+</div><!-- end .content -->

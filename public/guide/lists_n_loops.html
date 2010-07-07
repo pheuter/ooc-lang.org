@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>lists_n_loops.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>lists_n_loops.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> <i>ooc</i> features several useful data stuctures for containing data.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> <h2>Raw arrays</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> An array of strings</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">strings</span> <span class="o">:=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;hard&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">2</span><span class="p">)</span> <span class="p">(</span><span class="nv">strings</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">();</span> <span class="s2">&quot;and place&quot;</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// rock, hard, and place</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> An array of classes</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Greg</span><span class="p">:</span> <span class="k">class</span> <span class="p">{}</span>
+<span class="nc">Naga</span><span class="p">:</span> <span class="k">class</span> <span class="p">{}</span>
+
+<span class="nv">back</span> <span class="o">:=</span> <span class="p">[</span><span class="nc">Greg</span> <span class="k">new</span><span class="p">(),</span> <span class="nc">Naga</span> <span class="k">new</span><span class="p">()]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">2</span><span class="p">)</span> <span class="p">(</span><span class="nv">back</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span> <span class="k">class</span> <span class="nv">name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span>
+<span class="c">// Greg Naga</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> <h2>ArrayList</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> Note the <code>import</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">import</span> <span class="nv">structs</span><span class="o">/</span><span class="nc">ArrayList</span>
+
+<span class="nv">list</span> <span class="o">:=</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Int</span><span class="o">&gt;</span> <span class="k">new</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">1</span><span class="o">..</span><span class="m-Decimal">11</span><span class="p">)</span> <span class="nv">list</span> <span class="nf">add</span><span class="p">(</span><span class="nv">i</span><span class="o">*</span><span class="nv">i</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">elem</span> <span class="k">in</span> <span class="nv">list</span><span class="p">)</span> <span class="p">(</span><span class="nv">elem</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span>
+<span class="c">// 1 4 9 16 25 36 49 64 81 100</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> Using <code>toArray</code> to convert list to a raw C array</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">array</span> <span class="o">:=</span> <span class="nv">list</span> <span class="nf">toArray</span><span class="p">()</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">11</span><span class="p">)</span> <span class="p">(((</span><span class="nv">array</span> <span class="k">as</span> <span class="nc">Int*</span><span class="p">)</span> <span class="o">+</span> <span class="nv">i</span><span class="p">)@</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span>
+<span class="c">// 0 1 4 9 16 25 36 49 64 81 100</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> Hold the phone, what just happend? For those familiar with C, the expression above may
+not seem all that unfamiliar. <code>toArray</code> is an <code>ArrayList</code> function that converts
+lists to raw C arrays.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">toArray</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">Pointer</span> <span class="p">{</span>
+    <span class="nv">arr</span> <span class="p">:</span> <span class="nc">T*</span> <span class="o">=</span> <span class="nf">gc_malloc</span><span class="p">(</span><span class="nf">size</span><span class="p">()</span> <span class="o">*</span> <span class="nc">T</span> <span class="nv">size</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="nf">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">arr</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">arr</span><span class="o">&amp;</span> <span class="k">as</span> <span class="nc">Pointer</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p> As <code>toArray</code> is a general function that deals with no specific type, a generic pointer is created. To
+properly deal with the data contained, we must cast the pointer to an <code>Int</code> pointer. Now, <code>array</code>
+is a pointer (array) of <code>Int</code>&rsquo;s.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">array</span> <span class="k">as</span> <span class="nc">Int*</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p> <code>@</code> is the de-reference operator. <code>array@</code> returns the value of the first block
+in memory under the array. It is equivalent to writing <code>array[0]</code>. Likewise, <code>(array + 1)@</code>
+is synonymous with <code>array[1]</code>.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">for</span> <span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">11</span><span class="p">)</span> <span class="p">((</span><span class="nv">array</span> <span class="k">as</span> <span class="nc">Int*</span><span class="p">)[</span><span class="nv">i</span><span class="p">]</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span>
+<span class="c">// 0 1 4 9 16 25 36 49 64 81 100</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p> <h2>HashMap</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p> Just like <code>ArrayList</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">import</span> <span class="nv">structs</span><span class="o">/</span><span class="nc">HashMap</span>
+
+<span class="nv">map</span> <span class="o">:=</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="k">new</span><span class="p">()</span>
+
+<span class="nv">map</span> <span class="nf">add</span><span class="p">(</span><span class="s2">&quot;language&quot;</span><span class="p">,</span> <span class="s2">&quot;ooc&quot;</span><span class="p">)</span>
+<span class="nv">map</span> <span class="nf">add</span><span class="p">(</span><span class="s2">&quot;awesomeness&quot;</span><span class="p">,</span> <span class="s2">&quot;epic&quot;</span><span class="p">)</span>
+<span class="nv">map</span> <span class="nf">add</span><span class="p">(</span><span class="s2">&quot;awesomeness&quot;</span><span class="p">,</span> <span class="s2">&quot;very epic!&quot;</span><span class="p">)</span>
+
+<span class="nv">map</span> <span class="nf">get</span><span class="p">(</span><span class="s2">&quot;awesomeness&quot;</span><span class="p">)</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// very epic</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p> <code>each</code> takes a function. Let us give it an awesome closure</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">map</span> <span class="nf">each</span><span class="p">(</span><span class="o">|</span><span class="nv">k</span><span class="p">,</span> <span class="nv">v</span><span class="o">|</span> <span class="p">(</span><span class="nv">k</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nv">v</span><span class="p">)</span> <span class="nf">println</span><span class="p">())</span>
+<span class="c">// language is ooc </span>
+<span class="c">// awesomeness is very epic!</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p> <code>getKeys</code> returns an ArrayList of keys</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">map</span> <span class="nf">getKeys</span><span class="p">()</span> <span class="nf">each</span><span class="p">(</span><span class="o">|</span><span class="nv">k</span><span class="o">|</span> <span class="p">(</span><span class="nv">k</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">())</span>
+<span class="c">// language awesomeness</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p> <h2>Styles of iteration</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        <p> As evident in the various examples above, there are several ways of iterating through arrays, lists,
+and maps.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p> One way is to use the good ole' <code>for</code> loop</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">10</span><span class="p">)</span> <span class="c">// i assumes the values in the range from 0 to 9</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="nv">list</span><span class="p">)</span> <span class="c">// i assumes the value of each element in the ArrayList</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        <p> Another is to use closures</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">list</span> <span class="o">:=</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Int</span><span class="o">&gt;</span> <span class="k">new</span><span class="p">()</span>
+<span class="nv">f</span><span class="p">:</span> <span class="k">func</span> <span class="o">&lt;</span><span class="nc">T</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">elem</span><span class="p">:</span> <span class="nc">T</span><span class="p">)</span> <span class="p">{</span> <span class="p">((</span><span class="nv">elem</span> <span class="k">as</span> <span class="nc">Int</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span> <span class="p">}</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">20</span><span class="p">)</span> <span class="nv">list</span> <span class="nf">add</span><span class="p">(</span><span class="nv">i</span><span class="p">)</span>
+
+<span class="nv">list</span> <span class="nf">each</span><span class="p">(</span><span class="nv">f</span><span class="p">)</span>
+<span class="c">// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</span>
+
+<span class="nv">list</span> <span class="nf">each</span><span class="p">(</span><span class="o">|</span><span class="nv">elem</span><span class="o">|</span> <span class="p">(</span><span class="nv">elem</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">())</span> <span class="c">// preferred method</span>
+<span class="c">// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p> Most, if not all, container data structures have built-in iterators that provide a more procedural approach
+to traversing their elements</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">iter</span> <span class="o">:=</span> <span class="nv">list</span> <span class="nf">iterator</span><span class="p">()</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nv">iter</span> <span class="nf">hasNext</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">(</span><span class="nv">iter</span> <span class="nf">next</span><span class="p">()</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="nf">print</span><span class="p">()</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-25'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-25">#</a>
+        </div>
+        <p> Same applies for HashMaps, where <code>next</code> returns the value associated with the next key.
+Keys are sorted in order of insertion</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

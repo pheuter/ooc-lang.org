@@ -1,38 +1,56 @@
-<div id="main-container">
-
-	<ul id="menu">
-		<li><%= link_to 'Home', home_index_path, :class => "current" %></li>
-		<li><%= link_to 'Blog', posts_path%></li>
-		<% if user_signed_in? %>
-		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
-		<% else %>
-		<li><%= link_to "Sign in", new_user_session_path %></li>
-		<% end %>
-		<li><%= link_to 'install', "#install", :rel => "facebox", :style => "color:blue" %></li>
-	</ul>
-
-		<h1 id="web-title"><a href="/"><span class="emphasize">ooc</span></a></h1>
-		<h2 id="web-subtitle"><%= Slogan.random %></h2>
-
-		<div id="maincol">
-			<p>Welcome</p>
+<div class="content group">
+	
+	<div class="featured group">
+	
+		<div class="item group">
+			<img src="/img/hello_world.png" alt="" />
+			<h2>Welcome to ooc-lang!</h2>
+			<br />
+			<p><i>ooc</i> is a modern, self-hosting, object-oriented, functional, high-level, low-level programming language. It strives to be powerful, modular, extensible, portable, yet simple and fast. <i>ooc</i> translates to C99 via rock, our self-hosting compiler. Targetting C makes it fast, easy to debug, nice to interface with, ubiquitous, and you can use all your familiar tools: GDB, Valgrind, gprof...</p>
+		</div><!-- end .item -->	
+	
+	</div><!-- end .featured -->
+	
+	<div class="services group">
+		<div>
+			<h4><i>ooc</i> @ GitHub</h4>
+			<img src="/img/github-logo.png" alt="" />
+			<p>A centralized GitHub organization where all core ooc projects will reside in is under way. For now, feel free to browse through the language index for ooc related projects.</p>
+			<a href="http://github.com/languages/ooc" class="more">index</a>
 		</div>
+		<div>
+			<h4>Introductory guide</h4>
+			<img src="/img/guide.gif" alt="" />
+			<p>Getting started with learning the language just got easier with a learn-by-example guide.</p>
+			<a href="/guide/cool_ooc.html" class="more">guide</a>
+		</div>
+		<div>
+			<h4>Documentation</h4>
+			<img src="/img/docs.png" alt="" />
+			<p><i>ooc</i> documentation, including <a href="http://docs.ooc-lang.org/language/syntax.html#syntax">syntax reference</a> and a <a href="http://docs.ooc-lang.org/language/bindings/simple.html">guide</a> for writing C bindings, is available.</p>
+			<a href="http://docs.ooc-lang.org/language/index.html" class="more">documentation</a>
+		</div>		
+	</div><!-- end .services -->
+	
+	<div class="tagline">
+		<h3>Installing <i>ooc</i> is a breeze</h3>
+		<p>curl: <code>bash -c "`curl -L http://ooc.heroku.com/install.sh`"</code></p>
+		<br/>
+		<p>wget: <code>bash -c "`wget -O - http://ooc.heroku.com/install.sh`"</code></p>
+		<a href="/getting_started/index" class="more">more</a>
+	</div><!-- end. tagline -->
+	
+	<div class="group">
+		<div class="quote">
+			<h3>#ooc-lang</h3>
+			<p>#ooc-lang is where the amazing <i>ooc</i> community comes through. You will feel welcome and right at home with your buddies. Constructive (and occasional destructive) criticism is encouraged. You are bound to find at least a couple members from the core development team on at any given point throughout the day. After all, we come from around the globe. It takes a little to contribute a lot.</p>
+			<a href="http://webchat.freenode.net/?nick=llama_.....&channels=ooc-lang&uio=OT10cnVlJjExPTIwNQa5" class="request">#ooc-lang</a>
+		</div><!-- end .quote -->
 		
-	</div>
-
-	<div id="footer">
-		<h2 class="compact">Recent Articles</h2>
-		<ul class="compact">
-			<% Post.find(:all, :order => 'created_at DESC', :limit => 5).each do |post| %>
-			<li><%= link_to post.title, post %> <span class="date"><%= post.created_at.strftime("%m/%d/%Y") %></span></li>
-			<% end %>
-		</ul>
-  </div>
-
-<div style="width:700px" id="install">
-	<h2>Install ooc now!</h2>
-	<br/>
-	curl: <code>bash -c "`curl -L http://ooc.heroku.com/install.sh`"</code>
-	<br/><br/>
-	wget: <code>bash -c "`wget -O - http://ooc.heroku.com/install.sh`"</code>
-</div>
+		<div class="clients">
+			<h4>Screencasts</h4>
+			<ul class="group">
+				<li><a href="index.htm">Grep in ooc</a></li>
+			</ul>
+		</div><!-- end .clients -->
+	</div><!-- end .group -->

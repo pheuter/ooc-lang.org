@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>classes.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>classes.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> Classes in <i>ooc</i> are like classes anywhere else, with a few available optimizations</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Human</span><span class="p">:</span> <span class="k">class</span> <span class="p">{</span>
+  <span class="nv">name</span><span class="p">:</span> <span class="nc">String</span>
+  <span class="nv">weight</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="nc">Int</span>
+  
+  <span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="nv">weight</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span> <span class="nv">name</span> <span class="o">=</span> <span class="nv">name</span>
+    <span class="k">this</span> <span class="nv">weight</span> <span class="o">=</span> <span class="nv">weight</span>
+    <span class="k">this</span> <span class="nv">height</span> <span class="o">=</span> <span class="nv">height</span>
+  <span class="p">}</span>
+  
+  <span class="nv">println</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span>
+    <span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="o">+</span><span class="k">this</span> <span class="nv">name</span><span class="o">+</span><span class="s2">&quot;, weight: &quot;</span><span class="o">+</span><span class="k">this</span> <span class="nv">weight</span><span class="o">+</span><span class="s2">&quot;, and height: &quot;</span><span class="o">+</span><span class="k">this</span> <span class="nv">height</span><span class="p">)</span> <span class="nf">println</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">me</span> <span class="o">:=</span> <span class="nc">Human</span> <span class="k">new</span><span class="p">(</span><span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="m-Decimal">150</span><span class="p">,</span> <span class="m-Decimal">6</span><span class="p">)</span>
+<span class="nv">me</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// Name: Mark, weight: 150, and height: 6</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> Since <code>name</code>, <code>weight</code>, and <code>height</code> are already class members, specifying
+their types is redundant</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">.</span><span class="nf">name</span><span class="p">,</span> <span class="o">.</span><span class="nf">weight</span><span class="p">,</span> <span class="o">.</span><span class="nf">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span> <span class="nv">name</span> <span class="o">=</span> <span class="nv">name</span>
+  <span class="k">this</span> <span class="nv">weight</span> <span class="o">=</span> <span class="nv">weight</span>
+  <span class="k">this</span> <span class="nv">height</span> <span class="o">=</span> <span class="nv">height</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> Heck, why write so much in a standard constructor?</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">=</span><span class="nv">name</span><span class="p">,</span> <span class="o">=</span><span class="nv">weight</span><span class="p">,</span> <span class="o">=</span><span class="nv">height</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> <h2>Abstract</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Programmer</span><span class="p">:</span> <span class="k">abstract</span> <span class="k">class</span> <span class="p">{</span>
+  <span class="nv">coolness</span><span class="p">:</span> <span class="k">abstract</span> <span class="k">func</span>
+<span class="p">}</span>
+
+<span class="nc">Ooc</span><span class="p">:</span> <span class="k">class</span> <span class="k">extends</span> <span class="nc">Programmer</span> <span class="p">{</span>
+  <span class="nv">coolness</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span> <span class="s2">&quot;epic&quot;</span> <span class="nf">println</span><span class="p">()</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">Else</span><span class="p">:</span> <span class="k">class</span> <span class="k">extends</span> <span class="nc">Programmer</span> <span class="p">{</span>
+  <span class="nv">coolness</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span> <span class="s2">&quot;great&quot;</span> <span class="nf">println</span><span class="p">()</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">inquire</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">programmer</span><span class="p">:</span> <span class="nc">Programmer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">programmer</span> <span class="nf">coolness</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nf">inquire</span><span class="p">(</span><span class="nc">Ooc</span> <span class="k">new</span><span class="p">())</span>
+<span class="c">// epic</span>
+<span class="nf">inquire</span><span class="p">(</span><span class="nc">Else</span> <span class="k">new</span><span class="p">())</span>
+<span class="c">// great</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> <h2>Static fields</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Person</span><span class="p">:</span> <span class="k">class</span> <span class="p">{</span>
+  <span class="nv">people</span><span class="p">:</span> <span class="k">static</span> <span class="nc">Int</span>
+  <span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span> <span class="nc">This</span> <span class="nv">people</span> <span class="o">+=</span> <span class="m-Decimal">1</span> <span class="p">}</span>
+  <span class="nv">getPeople</span><span class="p">:</span> <span class="k">static</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span> <span class="nc">This</span> <span class="nv">people</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="m-Decimal">42</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">Person</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nc">Person</span> <span class="nf">getPeople</span><span class="p">()</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 42</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> <h2>Generics</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Container</span><span class="p">:</span> <span class="k">class</span> <span class="o">&lt;</span><span class="nc">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nv">content</span><span class="p">:</span> <span class="nc">T</span>
+  <span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">=</span><span class="nv">content</span><span class="p">)</span>
+  <span class="nv">get</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">T</span> <span class="p">{</span> <span class="nv">content</span> <span class="p">}</span>
+  <span class="nv">set</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">=</span><span class="nv">content</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nv">cont1</span> <span class="o">:=</span> <span class="nc">Container</span><span class="o">&lt;</span><span class="nc">Int</span><span class="o">&gt;</span> <span class="k">new</span><span class="p">(</span><span class="m-Decimal">42</span><span class="p">)</span>
+<span class="nv">number</span> <span class="o">:=</span> <span class="nv">cont1</span> <span class="nf">get</span><span class="p">()</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;number is an %s, and its value is %d\n&quot;</span><span class="p">,</span> <span class="nv">number</span> <span class="k">class</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">number</span><span class="p">)</span>
+<span class="c">// number is an Int, and its value is 42</span>
+
+<span class="nv">cont2</span> <span class="o">:=</span> <span class="nc">Container</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="k">new</span><span class="p">(</span><span class="s2">&quot;Hi, world!&quot;</span><span class="p">)</span>
+<span class="nv">message</span> <span class="o">:=</span> <span class="nv">cont2</span> <span class="nf">get</span><span class="p">()</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;message is a %s, and its value is %s\n&quot;</span><span class="p">,</span> <span class="nv">message</span> <span class="k">class</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">message</span><span class="p">)</span>
+<span class="c">// message is a String, and its value is Hi, world!</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

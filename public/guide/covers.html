@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>covers.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>covers.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> Covers got to be my favorite aspect of <i>ooc</i>. In essence, a cover is nothing more than
+a C <code>typedef</code> on rails. Covering primitive types extends functionality and allows for higher-level
+manipulation. Every type in <i>ooc</i> is a cover off of C types.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> Notice how all <i>ooc</i> types are capitalized? In fact, we cannot create variables with C types.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">chr</span> <span class="o">=</span> <span class="sc">&#39;c&#39;</span> <span class="p">:</span> <span class="nv">char</span>
+<span class="c">// [ERROR] Undefined type &#39;char&#39;</span>
+
+<span class="nv">chr</span> <span class="o">=</span> <span class="sc">&#39;c&#39;</span> <span class="p">:</span> <span class="nc">Char</span>
+<span class="c">// No error</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> Covering is as simple as creating a new class. Notice that we can define functions for covers.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">String</span><span class="p">:</span> <span class="k">cover</span> <span class="k">from</span> <span class="nc">Char*</span> <span class="p">{</span>
+  <span class="nv">roll</span><span class="o">?</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">Bool</span> <span class="p">{</span> <span class="k">this</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="s2">&quot;rock&quot;</span> <span class="nv">roll</span><span class="o">?</span><span class="p">())</span> <span class="s2">&quot;Rock n&#39; Roll&quot;</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// Rock n&#39; Roll</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> Once we have a cover already defined, there&rsquo;s no need to specify what we are are covering from (the <code>Int</code> cover
+is defined in the standard).</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Int</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+  <span class="nv">seconds2minutes</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">This</span> <span class="p">{</span> <span class="k">this</span> <span class="o">/</span> <span class="m-Decimal">60</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="m-Decimal">2520</span> <span class="nf">seconds2minutes</span><span class="p">()</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 42</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> <h2>This n' this</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> Let us sidestep a bit to better understand the usage of <code>This</code> and <code>this</code>.
+<code>This</code> is a reference to a type, in the <code>seconds2minutes</code> example above, <code>This</code>
+refers to the <code>Int</code> type. Hence, we can say <code>seconds2minutes</code> is a function that
+returns a value of type <code>Int</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> <code>this</code> is the reference to the actual object of type <code>This</code>. In the example
+above, <code>this == 2520</code> and <code>This == Int</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> When used in a class, <code>This</code> refers to the class while <code>this</code> refers to the instance
+of that class</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Animal</span><span class="p">:</span> <span class="k">class</span> <span class="p">{</span>
+  <span class="nv">animal</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">This</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span> <span class="p">}</span> <span class="c">// Simply returns the object animal was called on (object is of type Animal)</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p> <h2>Extending classes without subclassing</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p> In <i>ooc</i>, it is possible to define additional behavior for a class without subclassing it, rather
+by using covers and clever polymorphism.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Human</span><span class="p">:</span> <span class="k">class</span> <span class="p">{</span>
+  <span class="nv">height</span><span class="p">:</span> <span class="nc">Int</span>
+  <span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">=</span><span class="nv">height</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nv">me</span> <span class="o">:=</span> <span class="nc">Human</span> <span class="k">new</span><span class="p">(</span><span class="m-Decimal">6</span><span class="p">)</span>
+
+<span class="nc">ExtendedHuman</span><span class="p">:</span> <span class="k">cover</span> <span class="k">from</span> <span class="nc">Human</span> <span class="p">{</span>
+  <span class="nv">printHeight</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span>
+    <span class="k">this</span> <span class="k">as</span> <span class="nc">Human</span> <span class="nv">height</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">me</span> <span class="k">as</span> <span class="nc">ExtendedHuman</span> <span class="nf">printHeight</span><span class="p">()</span>
+<span class="c">// 6</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

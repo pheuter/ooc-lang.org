@@ -1,4 +1,6 @@
 OocLang::Application.routes.draw do |map|
+  get "getting_started/index"
+  
   resources :posts
 
   resources :categories

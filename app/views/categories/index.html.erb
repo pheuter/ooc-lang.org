@@ -1,8 +1,30 @@
-<div id="maincol">
-<% @categories.each do |c|%>
-<div class="article">
-	<h1 class="article-title"><%= link_to c.name, c%></h1>
-</div>
-<% end %>
-<br/><br/>
-</div>
+<div class="content">
+
+	<div class="inner-content group">
+	
+		<div class="main group">
+		
+			<% @categories.each do |c| %>
+			<div class="post">
+				<h3><%= link_to c.name, c%></h3>		
+			</div><!-- end .post -->
+			<% end %>	
+														
+		</div><!-- end .main -->
+		
+		<div class="sidebar group">
+		
+			<div class="widget">
+				<h3>Categories</h3>
+				<ul>
+					<% Category.all.each do |c| %>
+						<li><%= link_to c.name, c %></li>
+					<% end %>
+				</ul>
+			</div><!-- end .widget -->
+		
+		</div><!-- end .sidebar -->
+	
+	</div><!-- end. inner-content -->
+
+</div><!-- end .content -->

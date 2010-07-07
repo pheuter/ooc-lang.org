@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>functions.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>functions.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> Function definitions are flexible. They can consist of arguments, return value, suffix (for
+overloading), and several special keywords. Usage of all these parts is optional.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> A function <code>add</code> with two arguments, both are of type <code>Int</code>, and a return of type
+<code>Int</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">multiply</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="nv">m</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nv">n</span><span class="o">*</span><span class="nv">m</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> Since both arguments are Int, let us simplify</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">multiply</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">m</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nv">n</span><span class="o">*</span><span class="nv">m</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> In <i>ooc</i>, last statement in function is an inferred return. Let us take advantage of that.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">multiply</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">m</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span> <span class="nv">n</span><span class="o">*</span><span class="nv">m</span> <span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> A function without a return type</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">println</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">str</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span><span class="p">)</span> <span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p> As mentioned earlier, function overloading is possible through the use of <code>~</code>. Overloading
+allows functions to have similar names, yet receive arguments or return values of different types.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">divide</span><span class="p">:</span> <span class="k">func</span> <span class="nf">~withInt</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">m</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span> <span class="nv">n</span><span class="o">/</span><span class="nv">m</span> <span class="p">}</span>
+<span class="nv">divide</span><span class="p">:</span> <span class="k">func</span> <span class="nf">~withDouble</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">m</span><span class="p">:</span> <span class="nc">Float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Float</span> <span class="p">{</span> <span class="nv">n</span><span class="o">/</span><span class="nv">m</span> <span class="p">}</span>
+
+<span class="nf">divide</span><span class="p">(</span><span class="m-Decimal">22</span><span class="p">,</span><span class="m-Decimal">7</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 3</span>
+<span class="nf">divide</span><span class="p">(</span><span class="m-Decimal">22</span><span class="p">.</span><span class="m-Decimal">0</span><span class="p">,</span><span class="mf">7.0</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 3.14</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> We can also call a specific version of the function; note how the arguments and return type are casted to a Double</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nf">divide~withDouble</span><span class="p">(</span><span class="m-Decimal">22</span><span class="p">,</span><span class="m-Decimal">7</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 3.14</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> Functions could also be written to use generic types</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">printType</span><span class="p">:</span> <span class="k">func</span> <span class="o">&lt;</span><span class="nc">T</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">param</span><span class="p">:</span> <span class="nc">T</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nc">T</span> <span class="o">==</span> <span class="nc">Int</span><span class="p">)</span> <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;It&#39;s an Int! and its value is %d\n&quot;</span><span class="p">,</span> <span class="nv">param</span> <span class="k">as</span> <span class="nc">Int</span><span class="p">)</span>
+  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nc">T</span> <span class="o">==</span> <span class="nc">Char</span><span class="p">)</span> <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;It&#39;s a char! and its value is &#39;%c&#39;\n&quot;</span><span class="p">,</span> <span class="nv">param</span> <span class="k">as</span> <span class="nc">Char</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">printType</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">)</span>
+<span class="c">// It&#39;s a char! and its value is &#39;c&#39;</span>
+<span class="nf">printType</span><span class="p">(</span><span class="m-Decimal">42</span><span class="p">)</span>
+<span class="c">// It&#39;s an Int! and its value is 42</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> There exist several other keywords we can put before <code>func</code>:</p>
+
+<ul>
+  <li><code>proto</code>: Adds function prototypes in the generated C file (e.g. when you’re missing a header)</li>
+  <li><code>inline</code>: Just like C inline (Hint to the compiler to make calling this function faster, usually by substituting calls to this function with the actual code of the function. It’s generally used for functions that will be called very often)</li>
+  <li><code>extern</code>: Means it is defined elsewhere, e.g. in some C code. By default it uses the name of the ooc function being defined but you can also use it with an argument to wrap a C function with a different name</li>
+</ul>
+
+
+<p></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> wraps C <code>exit</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">exit</span><span class="p">:</span> <span class="k">extern</span> <span class="k">func</span> <span class="p">(</span><span class="nv">status</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p> wraps C <code>puts</code>, but will be called in ooc as putString(s)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">putString</span><span class="p">:</span> <span class="k">extern</span><span class="p">(</span><span class="nv">puts</span><span class="p">)</span> <span class="k">func</span> <span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p> exactly the same as above; naming extern arguments is optional</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">putString</span><span class="p">:</span> <span class="k">extern</span><span class="p">(</span><span class="nv">puts</span><span class="p">)</span> <span class="k">func</span> <span class="p">(</span><span class="nc">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

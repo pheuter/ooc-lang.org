@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>hello_world.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>hello_world.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> Let us begin by writing the universal Hello World program</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">main</span><span class="p">:</span> <span class="k">func</span> <span class="p">{</span>
+  <span class="s2">&quot;Hello, World&quot;</span> <span class="nf">println</span><span class="p">()</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> First, we create our program&rsquo;s entry point, the <code>main</code> function</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">main</span><span class="p">:</span> <span class="k">func</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> This is the same <code>main</code> that you write in C</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> Finally, we call <code>println</code> on the string literal &ldquo;Hello, World&rdquo;. Notice how we ommit the dot operator and instead use a space.
+ The string literal is actually a cover of the C char*, but more on that later.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="s2">&quot;Hello, World&quot;</span> <span class="nf">println</span><span class="p">()</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> Note, you don&rsquo;t even need to write a main function. The function expression alone will be automagically
+wrapped in a main function for you during translation.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="s2">&quot;Hello, World&quot;</span> <span class="nf">println</span><span class="p">()</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p> Save the file as hello_world.ooc, open up terminal, and run  <br/>
+<code>rock hello_world.ooc</code> (<i>if you have textmate ooc set up,</i> ⌘r <i>will do the job</i>)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> A binary file <code>hello_world</code> is produced, which you can run with <code>./hello_world</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> That is all very magical, but being the inquisitive minds that we are, a more throrough explanation
+of what just happened would be nice.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> The first thing that happens when you run <code>rock hello_world.ooc</code> is the parsing stage. Parsing
+will always take place to scan code for changes in runtime dependencies and library imports.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="o">-</span> <span class="nc">Parsing</span> <span class="p">.</span><span class="o">/</span><span class="nv">hello_world</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">memory</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">stdio</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">string</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">system</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">types</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">vararg</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">structs</span><span class="o">/</span><span class="nc">List</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">text</span><span class="o">/</span><span class="nc">Buffer</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">io</span><span class="o">/</span><span class="nc">Writer</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">io</span><span class="o">/</span><span class="nc">Reader</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="o">-</span> <span class="nc">Parsing</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">structs</span><span class="o">/</span><span class="nc">ArrayList</span><span class="o">.</span><span class="nf">ooc</span>
+<span class="nc">Finished</span> <span class="nv">parsing</span><span class="p">,</span> <span class="nv">now</span> <span class="nv">tinkering</span><span class="o">..</span><span class="p">.</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> The next stage, libcaching, depends upon the parsing. Notice that there now exists a .libs directory in your current directory. It contains
+translated C header files that are essential to the compile time of your program. In this case, <code>stdio.h</code>
+and <code>string.h</code> will be used (in addition to other boilerplate runtime libraries). Libcaching will happen
+once per program per directory, meaning that if you <code>mv hello_world.ooc</code> elsewhere, compiling
+it with rock will create a .libs in that new directory. Also, if you import new libraries or implement new
+ooc constructs, .libs will be updated accordingly.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">sdk</span><span class="p">,</span> <span class="nc">Compiling</span> <span class="nv">all</span> <span class="nv">modules</span><span class="o">..</span><span class="p">.</span>
+<span class="nv">gcc</span> <span class="o">-</span><span class="nv">std</span><span class="o">=</span><span class="nv">gnu99</span> <span class="o">-</span><span class="nc">Wall</span> <span class="o">-</span><span class="nc">I</span><span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">libs</span><span class="o">/</span><span class="nv">headers</span><span class="o">/</span> <span class="o">-</span><span class="nc">Irock_tmp</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">rock_tmp</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">memory</span><span class="o">.</span><span class="nf">c</span> 
+<span class="o">-</span><span class="nv">o</span> <span class="nv">rock_tmp</span><span class="o">/</span><span class="nv">sdk</span><span class="o">/</span><span class="nv">lang</span><span class="o">/</span><span class="nv">memory</span><span class="o">.</span><span class="nf">o</span> <span class="o">-</span><span class="nc">I</span><span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">libs</span><span class="o">/</span><span class="nv">headers</span><span class="o">/</span> <span class="o">-</span><span class="nc">Irock_tmp</span> <span class="o">-</span><span class="no">D__OOC_USE_GC__</span> 
+<span class="o">-</span><span class="nc">I</span><span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">cool_ooc</span> <span class="o">-</span><span class="nc">I</span><span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">sdk</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p> Why is this necessary? Libcaching helps speed up all future compilations of a program. If you run
+<code>rock hello_world.ooc</code> a second time, the libcaching stage will be skipped, and hello_ooc will
+be compiled against the libraries in .libs, cool eh?</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">gcc</span> <span class="o">-</span><span class="nv">std</span><span class="o">=</span><span class="nv">gnu99</span> <span class="o">-</span><span class="nc">Wall</span> <span class="o">-</span><span class="nc">I</span><span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">libs</span><span class="o">/</span><span class="nv">headers</span><span class="o">/</span> 
+<span class="o">-</span><span class="nc">Irock_tmp</span> <span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">cool_ooc</span><span class="o">-</span><span class="nv">osx</span><span class="o">.</span><span class="nf">a</span> <span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">sdk</span><span class="o">-</span><span class="nv">osx</span><span class="o">.</span><span class="nf">a</span> <span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">cool_ooc</span><span class="o">-</span><span class="nv">osx</span><span class="o">.</span><span class="nf">a</span> <span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">sdk</span><span class="o">-</span><span class="nv">osx</span><span class="o">.</span><span class="nf">a</span> 
+<span class="o">-</span><span class="no">D__OOC_USE_GC__</span> <span class="o">-</span><span class="nc">I</span><span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">cool_ooc</span> <span class="o">-</span><span class="nc">I</span><span class="o">.</span><span class="nf">libs</span><span class="o">/</span><span class="nv">sdk</span> <span class="o">-</span><span class="nv">o</span> <span class="nv">test</span> <span class="o">-</span><span class="nv">lpthread</span> <span class="o">/</span><span class="nc">Users</span><span class="o">/</span><span class="nc">Mark</span><span class="o">/</span><span class="nc">Desktop</span><span class="o">/</span><span class="nv">rock</span><span class="o">/</span><span class="nv">libs</span><span class="o">/</span><span class="nv">osx</span><span class="o">/</span><span class="nv">libgc</span><span class="o">.</span><span class="nf">a</span> </pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p> If you would like to see the actual C files that are produced, run rock with the <code>-noclean</code> option.
+You could then find the files in the <code>rock_tmp</code> directory.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p> If you&rsquo;d like to see what happens behind the scenes as you compile the program, run rock with the <code>-v</code> option.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p> <code>rock &mdash;help</code> contains a full list of arguments you can pass to <code>rock</code> that will
+change some aspect of the translation/compilation process. If you want to pass to rock a <code>gcc</code>
+option, use a <code>+</code>. Example, <code>rock +-framework +sfml-graphics</code> will add
+<code>-framework sfml-graphics</code> to <code>gcc</code> during compilation.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

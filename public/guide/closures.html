@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>closures.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>closures.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> What makes <i>ooc</i> so special is its ability to abstract the low-level power of C into various
+high-level goodies, and break them back down into C. Two such goodies will be covered in this section: <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)">Closures</a> and <a href="http://en.wikipedia.org/wiki/Higher-order_function">Higher-order functions</a></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> Simply put, a higher-order function is a function that takes another function as input. Using pseudocode,
+lets say I have a function that adds two numbers together</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">)</span>
+  <span class="k">return</span><span class="p">(</span><span class="nv">x</span><span class="o">+</span><span class="nv">y</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> Calling the function with two numbers would yield an expected result</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nf">add</span><span class="p">(</span><span class="m-Decimal">1</span><span class="p">,</span><span class="m-Decimal">2</span><span class="p">)</span>
+<span class="c">// 3</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> To make <code>add</code> a higher-order function, it would have to take a function as an argument</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">function</span> <span class="nf">x</span><span class="p">(</span><span class="nv">n</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nv">n</span>
+  
+<span class="nv">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nf">x</span><span class="p">(</span><span class="m-Decimal">1</span><span class="p">)</span> <span class="o">+</span> <span class="nv">y</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> Calling x(1) would return 1 (x could be considered an <a href="http://en.wikipedia.org/wiki/Identity_function">identity function</a>)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="m-Decimal">2</span><span class="p">)</span>
+<span class="c">// 3</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p> <i>ooc</i> currently has two different ways of implementing functions, both using this construct known as
+a closure</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> A closure is a first-class function. Basically, this means that just like 1, &ldquo;hello&rdquo;, and 5.0 are literal pieces of data,
+functions are too. Just like all random pieces of data, closures can be stored and passed around (even as parameters to higher-order functions).
+Closures are bound to the scope of the variables specified.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> The first method involves using the <code>func</code> literal</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">x</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span> <span class="nv">n</span> <span class="p">}</span>
+<span class="nv">add</span><span class="p">:</span> <span class="k">func</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="nc">Func</span><span class="p">(</span><span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span> <span class="nf">x</span><span class="p">(</span><span class="m-Decimal">1</span><span class="p">)</span> <span class="o">+</span> <span class="nv">y</span> <span class="p">}</span>
+
+<span class="nf">add</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="m-Decimal">2</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">println</span><span class="p">()</span>
+<span class="c">// 3</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> <code>x</code> is a function that takes an argument we call <code>n</code> of type <code>Int</code> and
+returns a value of type <code>Int</code>, which is the integer that it is passed.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> <code>add</code> is a higher-order function that takes an argument we call <code>x</code> (we could call this bob, and change the call to bob(1))
+of type <code>Func</code>, which is a function that takes an Int and returns an Int, an argument we call <code>y</code> of type <code>Int</code>, and then <code>add</code> returns an Int which is the result of adding 1 and 2</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p> The second method involves using a very familiar construct for Rubyists, a block. Using a <code>cover</code>, let us
+implement the ruby <code>#times</code> function on all integers</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Int</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+  <span class="nv">times</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="nc">Func</span><span class="p">(</span><span class="nc">This</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="nv">i</span> <span class="k">in</span> <span class="m-Decimal">0</span><span class="o">..</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">f</span><span class="p">(</span><span class="nv">i</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="m-Decimal">5</span> <span class="nf">times</span><span class="p">(</span><span class="o">|</span><span class="nv">n</span><span class="o">|</span> <span class="p">(</span><span class="nv">n</span><span class="o">+</span><span class="m-Decimal">1</span><span class="p">)</span> <span class="nf">toString</span><span class="p">()</span> <span class="nf">print</span><span class="p">())</span>
+<span class="c">// 12345</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>

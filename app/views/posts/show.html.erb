@@ -1,53 +1,46 @@
-<div id="main-container">
+<div class="content">
 
-	<ul id="menu">
-		<li><%= link_to 'Home', home_index_path %></li>
-		<li><%= link_to 'Blog', posts_path%></li>
-		<% if user_signed_in? %>
-		<li><%= link_to 'New Post', new_post_path %></li>
-		<li><%= link_to 'New Category', new_category_path %></li>
-		<li><%= link_to "Sign out #{current_user.email}", destroy_user_session_path %>
-		<% else %>
-		<li><%= link_to "Sign in", new_user_session_path %></li>
-		<% end %>
-	</ul>
+	<div class="inner-content group">
 	
-	<h1 id="web-title"><a href="/posts"><span class="emphasize">ooc</span> blog</a></h1>
-	<h2 id="web-subtitle"><%= Slogan.random %></h2>
+		<div class="main group">
+		
+			<div class="post">
+			
+				<h3><%= link_to @post.title, @post%></h3>		
+				<%= raw @post.content %>
+				<div class="meta"><%= @post.created_at.strftime('%a %d %b, %Y') %> by <%= @post.author.match(/(.+)@/)[1] %></div>
+			
+			</div><!-- end .post -->
+			
+			<div class="comment-area">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+				  (function() {
+				   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				   dsq.src = 'http://ooc.disqus.com/embed.js';
+				   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+				</script>
+			</div>
+														
+		</div><!-- end .main -->
+		
+		<div class="sidebar group">
+		
+			<div class="widget">
+				<h3>Options</h3>
+				<ul>
+					<% if user_signed_in? %>
+						<li><%= link_to 'Edit', edit_post_path(@post) %></li>
+						<li><%= link_to 'Delete', @post, :confirm => "Are you sure?", :method => :delete %>
+						<% else %>
+						<li><%= link_to "Sign in", new_user_session_path %></li>
+					<% end %>
+				</ul>
+			</div><!-- end .widget -->
+		
+		</div><!-- end .sidebar -->
+	
+	</div><!-- end. inner-content -->
 
-	<div id="maincol">
-		<div class="article">
-			<h1 class="article-title"><%= link_to @post.title, @post%></h1>
-			<div class="article-meta">Published on <%= @post.created_at.strftime('%a %d %b, %Y') %> by <%=@post.author %> in <%= @post.category.name %></div>
-
-			<p><%= raw @post.content %>
-		</div>
-		<br/><br/>
-	</div>
-
-	<div id="sidebar">
-		<h2 class="compact">Options</h2>
-		<ul class="compact">
-			<% if user_signed_in? %>
-			<li><%= link_to 'Edit', edit_post_path(@post) %></li>
-			<li><%= link_to 'Delete', @post, :confirm => "Are you sure?", :method => :delete %>
-			<% else %>
-			<li><%= link_to "Sign in", new_user_session_path %></li>
-			<% end %>
-		</ul>
-	</div>
-
-</div>
-
-<div id="footer">
-	<div>
-	<h2 class="compact">Comments</h2>
-	<div id="disqus_thread"></div>
-	<script type="text/javascript">
-	  (function() {
-	   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	   dsq.src = 'http://ooc.disqus.com/embed.js';
-	   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	  })();
-	</script>
-</div>
+</div><!-- end .content -->

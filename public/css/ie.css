@@ -1,0 +1,86 @@
+/*
+Title:		IE patches and fixes
+Author:		justine@gentlecode.net
+*/
+
+/* Self-clear floats */
+
+*:first-child+html .post .meta,
+*:first-child+html .primary ul.services li,
+*:first-child+html .group {
+	min-height: 0%;	
+} 
+
+/* Other fixes */
+
+*:first-child+html div {
+	display: inline-block;
+}
+
+*:first-child+html .post .meta a.more-link {
+	margin-top: -34px !important;
+}
+
+*:first-child+html input[type=submit] {
+	font-size: 0px;
+	display:block;
+	line-height: 0px;
+}
+
+*:first-child+html .header ul.nav li a:hover, 
+*:first-child+html .header ul.nav li.hover a, 
+*:first-child+html .header ul.nav li.current a {
+	height: 20px;
+	border: none;
+	background: transparent url(../img/nav-blue.png) 100% 100% no-repeat;
+} 
+
+*:first-child+html .header ul.nav li.hover, 
+*:first-child+html .header ul.nav li:hover, 
+*:first-child+html .header ul.nav li.current { 
+	border: none;
+	background: transparent url(../img/nav-blue.png) 0% 0% no-repeat;
+}
+
+*:first-child+html .header ul.nav ul li a,
+*:first-child+html .header ul.nav ul li a:hover,
+*:first-child+html .header ul.nav ul li,
+*:first-child+html .header ul.nav ul li.hover,
+*:first-child+html .header ul.nav ul li.hover a { 
+	background-image: none !important;
+	padding: 5px 10px;
+	line-height: 20px;
+}
+
+*:first-child+html .content {
+	padding-top: 5px !important;
+}
+
+*:first-child+html .tagline {
+	padding: 10px 5px 10px 20px !important;
+}
+
+*:first-child+html .tagline a.more {
+	top: -30px !important; left: -45px !important;
+}
+
+*:first-child+html .subpage .tagline {
+	height: 80px !important;
+}
+
+*:first-child+html .clients ul li {
+	padding: 12px 15px 0 !important;
+}
+
+*:first-child+html .bottom {
+	height: 151px;
+	padding: 5px 10px !important;
+}
+
+.clients ul li {
+	margin: 10px 10px 20px 5px;
+}
+
+.tagline a.more {
+	margin-top:4px;
+}

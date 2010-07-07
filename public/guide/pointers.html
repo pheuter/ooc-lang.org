@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>pointers.ooc</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        <a class="source" href="classes.html">classes.ooc</a>
+        <a class="source" href="closures.html">closures.ooc</a>
+        <a class="source" href="cool_ooc.html">cool_ooc.ooc</a>
+        <a class="source" href="covers.html">covers.ooc</a>
+        <a class="source" href="declarations.html">declarations.ooc</a>
+        <a class="source" href="functions.html">functions.ooc</a>
+        <a class="source" href="hello_world.html">hello_world.ooc</a>
+        <a class="source" href="lists_n_loops.html">lists_n_loops.ooc</a>
+        <a class="source" href="pointers.html">pointers.ooc</a>
+        </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>pointers.ooc</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> are not as scary as you think. <i>ooc</i>&rsquo;s postfix notation makes them even less scary to think about, and
+that much more fun to work with. The examples provided traveled across the tubes from <a href="http://crowbarcentral.tumblr.com/">crowbar central</a></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> <h2>Primitives and addressing</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> <code>Int</code> is a primitive type, so it&rsquo;s passed by-value (e.g. a copy is made of it). You can get the
+address of something by appending <code>&amp;</code>. Primitive types are passed by-value, so their addresses will differ</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">takeInt</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">i</span><span class="p">,</span> <span class="nv">i</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">takeInt</span><span class="p">(</span><span class="m-Decimal">5</span><span class="p">)</span>
+<span class="c">// The Int&#39;s value is 5, its address is 0x7fff5fbfd5cc</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p> Modifying the value of an <code>Int</code> doesn&rsquo;t change its address. Modifying a copy of an <code>Int</code> doesn&rsquo;t modify the original.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">fightInt</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">i</span><span class="p">,</span> <span class="nv">i</span><span class="o">&amp;</span><span class="p">)</span>
+    <span class="c">// The int&#39;s value is 42, its address is 0x7fff5fbfd5dc</span>
+    <span class="nv">i</span> <span class="o">=</span> <span class="m-Decimal">0</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">i</span><span class="p">,</span> <span class="nv">i</span><span class="o">&amp;</span><span class="p">)</span>
+    <span class="c">// The int&#39;s value is 0, its address is 0x7fff5fbfd5dc</span>
+<span class="p">}</span>
+
+<span class="nv">j</span> <span class="o">:=</span> <span class="m-Decimal">42</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">j</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="c">// The int&#39;s value is 42, its address is 0x10002dbe0</span>
+<span class="nf">fightInt</span><span class="p">(</span><span class="nv">j</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">j</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="c">// The int&#39;s value is 42, its address is 0x10002dbe0</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p> Question is, how can we actually modify the value of an <code>Int</code>? Simple, pass its address instead (pass-by-reference).
+<code>@</code> is the de-reference operator. It gives the value of the <code>Int</code> that lives at the address</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">fightInt</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="nc">Int*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">i</span><span class="p">@,</span> <span class="nv">i</span><span class="p">)</span>
+    <span class="c">// The int&#39;s value is 42, its address is 0x10002dbe0</span>
+    <span class="nv">i</span><span class="p">@</span> <span class="o">=</span> <span class="m-Decimal">5</span>
+<span class="p">}</span>
+
+
+<span class="nv">j</span> <span class="o">:=</span> <span class="m-Decimal">42</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">j</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="c">// The int&#39;s value is 42, its address is 0x10002dbe0</span>
+<span class="nf">fightInt</span><span class="p">(</span><span class="nv">j</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;The int&#39;s value is %d, its address is %p\n&quot;</span><span class="p">,</span> <span class="nv">j</span><span class="p">,</span> <span class="nv">j</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="c">// The int&#39;s value is 5, its address is 0x10002dbe0</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> There exists a neat optimization that saves us the trouble of constantly appending <code>@</code>. Instead,
+we can specify <code>Int@</code> in the argument list, and refer to the object in a straightforward manner</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nv">fightInt</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="nc">Int@</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">i</span> <span class="o">=</span> <span class="m-Decimal">0</span>
+    <span class="c">// i&amp; still returns the address :)</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p> <h2>Covers</h2></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p> All covers are primitive types, therefore passing covers by-value will modify a copy, while passing them by-reference
+will modify the original</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Float3</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+    <span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="nc">Float</span>
+<span class="p">}</span>
+
+<span class="nv">takeFloat3</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">f3</span><span class="p">:</span> <span class="nc">Float3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">f3</span> <span class="nv">x</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">x</span>
+    <span class="nv">f3</span> <span class="nv">y</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">y</span>
+    <span class="nv">f3</span> <span class="nv">z</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">z</span>
+<span class="p">}</span>
+
+<span class="nv">takeFloat3Ref</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="nv">f3</span><span class="p">:</span> <span class="nc">Float3@</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">f3</span> <span class="nv">x</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">x</span>
+    <span class="nv">f3</span> <span class="nv">y</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">y</span>
+    <span class="nv">f3</span> <span class="nv">z</span> <span class="o">=</span> <span class="o">-</span><span class="nv">f3</span> <span class="nv">z</span>
+<span class="p">}</span>
+
+<span class="nv">f3</span><span class="p">:</span> <span class="nc">Float3</span>
+<span class="nv">f3</span> <span class="nv">x</span> <span class="o">=</span> <span class="m-Decimal">42</span><span class="p">;</span> <span class="nv">f3</span> <span class="nv">y</span> <span class="o">=</span> <span class="m-Decimal">36</span><span class="p">;</span> <span class="nv">f3</span> <span class="nv">z</span> <span class="o">=</span> <span class="m-Decimal">25</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">z</span><span class="p">)</span>
+<span class="c">// (42.00, 36.00, 25.00)</span>
+<span class="nf">takeFloat3</span><span class="p">(</span><span class="nv">f3</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">z</span><span class="p">)</span>
+<span class="c">// (42.00, 36.00, 25.00)</span>
+<span class="nf">takeFloat3Ref</span><span class="p">(</span><span class="nv">f3</span><span class="o">&amp;</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">f3</span> <span class="nv">z</span><span class="p">)</span>
+<span class="c">// (-42.00, -36.00, -25.00)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p> Ok, so covers are by-value, but what does this <i>mean</i>. It implies, for example, that any member method cannot modify the content
+of the original, but only of the copy</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">FlawedFloat3</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+    <span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="nc">Float</span>
+    
+    <span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="o">=</span><span class="nv">x</span><span class="p">,</span> <span class="o">=</span><span class="nv">y</span><span class="p">,</span> <span class="o">=</span><span class="nv">z</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="nv">ff3</span> <span class="o">:=</span> <span class="nc">FlawedFloat3</span> <span class="k">new</span><span class="p">(</span><span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.64</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">ff3</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">ff3</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">ff3</span> <span class="nv">z</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p> If you do that, you will get random values for ff3 x, ff3 y, ff3 z.
+why? because covers are allocated on the stack, and they aren&rsquo;t
+zero-ed out. Thus, they are initially filled with random data
+(which is why you should always initialize them)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p> So, how do we fix that? First we have to understand how member methods work. When we call FlawedFloat3 above, here&rsquo;s what it really does:</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="no">FF3_</span><span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="k">this</span><span class="p">:</span> <span class="nc">FlawedFloat3</span><span class="p">,</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="nc">Float</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span> <span class="nv">x</span> <span class="o">=</span> <span class="nv">x</span>
+    <span class="k">this</span> <span class="nv">y</span> <span class="o">=</span> <span class="nv">y</span>
+    <span class="k">this</span> <span class="nv">z</span> <span class="o">=</span> <span class="nv">z</span>
+<span class="p">}</span>
+
+<span class="nv">otherFf3</span><span class="p">:</span> <span class="nc">FlawedFloat3</span> <span class="c">// allocate on the stack = filled with garbage</span>
+<span class="no">FF3_</span><span class="nf">init</span><span class="p">(</span><span class="nv">otherFf3</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.64</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span> <span class="c">// call init - modifies a copy of otherFf3</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">otherFf3</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">otherFf3</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">otherFf3</span> <span class="nv">z</span><span class="p">)</span> <span class="c">// print the original</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p> So is there an easy workaround to use constructors in covers? Indeed there is note: we&rsquo;ll make it a Float2 to avoid clashing with variable names)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Float2</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+    <span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="nc">Float</span>
+    
+    <span class="nv">init</span><span class="p">:</span> <span class="k">func</span><span class="p">@</span> <span class="p">(</span><span class="o">=</span><span class="nv">x</span><span class="p">,</span> <span class="o">=</span><span class="nv">y</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="nv">ff2</span> <span class="o">:=</span> <span class="nc">Float2</span> <span class="k">new</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">6.22</span><span class="p">)</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;(%.2f, %.2f)\n&quot;</span><span class="p">,</span> <span class="nv">ff2</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">ff2</span> <span class="nv">y</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p> Why does it work? Because the init function generated looks something like this:</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="no">FF2_</span><span class="nv">init</span><span class="p">:</span> <span class="k">func</span> <span class="p">(</span><span class="k">this</span><span class="p">:</span> <span class="nc">Float2@</span><span class="p">,</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="nc">Float</span><span class="p">)</span> <span class="c">// etc.</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p> Note that it&rsquo;s not a trick only for the init function, it works so, when would we want
+functions that are not func@ on covers? Well, when we <i>want</i> to work on a copy. For example:</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nc">Float1</span><span class="p">:</span> <span class="nv">cover</span> <span class="p">{</span>
+    <span class="nv">x</span><span class="p">:</span> <span class="nc">Float</span>
+    
+    <span class="nv">init</span><span class="p">:</span> <span class="k">func</span><span class="p">@</span> <span class="p">(</span><span class="o">=</span><span class="nv">x</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nv">copy</span><span class="p">:</span> <span class="k">func</span> <span class="o">-&gt;</span> <span class="nc">This</span> <span class="p">{</span> <span class="k">this</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">f1</span> <span class="o">:=</span> <span class="nc">Float1</span> <span class="k">new</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="nv">f2</span> <span class="o">:=</span> <span class="nv">f1</span> <span class="nf">copy</span><span class="p">()</span>
+<span class="nf">printf</span><span class="p">(</span><span class="s2">&quot;Value of f1 = %.2f, f2 = %.2f, address of f1 = %p, of f2 = %p\n&quot;</span><span class="p">,</span> <span class="nv">f1</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">f2</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">f1</span><span class="o">&amp;</span><span class="p">,</span> <span class="nv">f2</span><span class="o">&amp;</span><span class="p">)</span>
+
+<span class="c">// here, f2 is really a copy of f1: same content, different address.</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>
