@@ -18,6 +18,15 @@
 			<div class="widget">
 				<h3>Articles in <%= link_to @category.name, @category %></h3>
 				<ul>
+					<% @category.posts.each do |post| %>
+						<li><%= link_to post.title, post %></li>
+					<% end %>
+				</ul>
+			</div><!-- end .widget -->
+			
+			<div class="widget">
+				<h3>Options</h3>
+				<ul>
 					<% if user_signed_in? %>
 						<li><%= link_to 'Edit', edit_category_path(@category) %></li>
 						<li><%= link_to 'Delete', @category, :confirm => "Are you sure?", :method => :delete %>
