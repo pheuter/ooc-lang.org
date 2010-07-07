@@ -26,7 +26,19 @@
 					<% end %>
 				</ul>
 			</div><!-- end .widget -->
-		
+				
+			<div class="widget">
+				<h3>Options</h3>
+				<ul>
+					<% if user_signed_in? %>
+					    <li><%= link_to 'New Post', new_post_path %></li>
+					    <li><%= link_to 'New Category', new_category_path %></li>
+					<% else %>	
+					    <li><%= link_to "Sign in", new_user_session_path %></li>	
+				  <% end %>
+				</ul>
+			</div>
+			
 		</div><!-- end .sidebar -->
 	
 	</div><!-- end. inner-content -->
