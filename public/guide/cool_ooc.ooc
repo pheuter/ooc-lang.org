@@ -1,6 +1,8 @@
 /* Welcome to the <b>cool <i>ooc</i></b> tutorials. Apart from radiating its epic palindrome name, this series will cover <i>ooc</i> 
 from beginner to advanced. */
 
+To proceed with the guide, use the "Jump to ..." navigation in the upper-right corner
+
 /* Before we get started, you'll need a rock compiler and a text editor of your choice. I perfer to use 
 TextMate, since there is a great ooc <a href="http://github.com/nilium/ooc.tmbundle">bundle</a> available for it. Some other text editor plugins:
 <ul>
