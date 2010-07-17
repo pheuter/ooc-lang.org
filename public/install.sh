@@ -39,6 +39,9 @@ function intro {
 
 function do_install {
     read -p "Enter installation directory [$HOME/rock]: " f
+    if [[ ! -n "$f" ]]; then
+      f="$HOME/rock"
+    fi
     if [[ ! -a $f ]]; then
         read -p "$f doesn't exist, create? [y/N] " c
         if [[ $c == y* ]]; then
@@ -47,11 +50,11 @@ function do_install {
             exit 1
         fi
     else
-        read -p "$f exists, contents will be replaced, are you sure? [y/N] " c
-        if [[ ! $c == y* ]]; then
-            exit 1
-        fi
-        rm -rf "$f"
+      read -p "$f exists, contents will be replaced, are you sure? [y/N] " c
+      if [[ ! $c == y* ]]; then
+        exit 1
+      fi
+      rm -rf "$f"
     fi
            
     git clone "http://github.com/nddrylliog/rock.git" "$f"
@@ -82,7 +85,7 @@ function do_install {
     echo "Homepage: http://ooc-lang.org"
     echo "IRC: irc.freenode.net #ooc-lang"
     echo ""
-    echo "Thank you"
+    echo "- Mark Fayngersh (@gmaster1440)"
     echo ""
     echo "========================================"
     
