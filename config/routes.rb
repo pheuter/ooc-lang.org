@@ -2,7 +2,7 @@ OocLang::Application.routes.draw do |map|
   root :to => "home#index"
   get "home/index"
   get "getting_started/index"
-  match "/bootstrap" => redirect("http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2")
+  match "/bootstrap" => redirect("http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2", 301)
   
   resources :posts
   resources :categories
