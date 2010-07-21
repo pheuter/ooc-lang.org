@@ -62,9 +62,9 @@ function do_install {
     cd "$f"
     
     if [ -x "`which curl`" ]; then
-        curl -L -\# "http://ooc-lang.org/bootstrap" | tar -xjf -
+        curl -L -\# "http://ooc-lang.org/boots" | tar -xjf -
     elif [ -x "`which wget`" ]; then
-        wget --progress=bar "http://ooc-lang.org/bootstrap" -O - | tar -xjf -
+        wget --progress=bar "http://ooc-lang.org/boots" -O - | tar -xjf -
     fi
     
     mkdir bin
