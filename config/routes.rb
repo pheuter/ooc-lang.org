@@ -1,15 +1,14 @@
 OocLang::Application.routes.draw do |map|
+  root :to => "home#index"
+  get "home/index"
   get "getting_started/index"
+  match "/bootstrap" => redirect("http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2")
   
   resources :posts
-
   resources :categories
-
   devise_for :users
 
-  get "home/index"
 
-  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
