@@ -62,9 +62,9 @@ function do_install {
     cd "$f"
     
     if [ -x "`which curl`" ]; then
-        curl -L -\# "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha7-bootstrap-only.tar.bz2" | tar -xjf -
+        curl -L -\# "http://ooc-lang.org/bootstrap.html" | tar -xjf -
     elif [ -x "`which wget`" ]; then
-        wget --progress=bar "http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha7-bootstrap-only.tar.bz2" -O - | tar -xjf -
+        wget --progress=bar "http://ooc-lang.org/bootstrap.html" -O - | tar -xjf -
     fi
     
     mkdir bin
