@@ -70,7 +70,7 @@ function do_install {
     mkdir bin
     make
     
-    if [[ $? -neq 0 ]]; then
+    if [[ $? != 0 ]]; then
       echo "Oops, something went wrong during installation :( Scroll up for error message."
     else
       echo "========================================"
