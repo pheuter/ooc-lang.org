@@ -45,7 +45,9 @@ module OocLang
 
     #ad-hoc redirections (for bootstrap)
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      rewrite '/boots', 'http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2'
+      r301 '/bootstrap', 'http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2', :if => Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] != 'github.com'
+      }
     end
   end
 end
