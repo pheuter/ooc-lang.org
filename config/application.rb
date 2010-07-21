@@ -45,7 +45,7 @@ module OocLang
 
     #ad-hoc redirections (for bootstrap)
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      r301 '/bootstrap', 'http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2'
+      rewrite '/bootstrap', 'http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha8-bootstrap-only.tar.bz2'
     end
   end
 end
