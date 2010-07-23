@@ -1,0 +1,2 @@
+module AlpacaHelper
+end

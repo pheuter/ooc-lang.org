@@ -1,4 +1,6 @@
 OocLang::Application.routes.draw do |map|
+  get "alpaca/index"
+
   root :to => "home#index"
   get "home/index"
   get "getting_started/index"

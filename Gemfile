@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise', '1.1.rc2'
 gem 'rdiscount'
 gem 'rack-rewrite'
+gem 'hpricot'
 
 # Use unicorn as the web server
 # gem 'unicorn'
