@@ -32,14 +32,19 @@
 		</div>		
 	</div><!-- end .services -->
 	
-	<div class="tagline">
+	<div style="float:left" class="tagline">
 		<h3>Installing <i>ooc</i> is a breeze</h3>
 		<p>curl: <code>bash -c "`curl -L http://ooc-lang.org/install.sh`"</code></p>
 		<br/>
 		<p>wget: <code>bash -c "`wget -O - http://ooc-lang.org/install.sh`"</code></p>
 		<a href="/getting_started/index" class="more">more</a>
 	</div><!-- end. tagline -->
-	
+	<div style="float:right; width:280px"class="tagline">
+		<h3>Alpaca build system</h3>
+		<%= raw @linux %>
+		<br/>
+		<%= link_to 'Dashboard', alpaca_index_path, :style => 'float:right; font-size: 15px; color: #A0A; font-weight: bold;' %>
+	</div><!-- end. tagline -->
 	<div class="group">
 		<div class="quote">
 			<h3>#ooc-lang</h3>
