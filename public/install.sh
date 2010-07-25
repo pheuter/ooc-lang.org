@@ -88,7 +88,7 @@ function do_install {
       echo "Homepage: http://ooc-lang.org"
       echo "IRC: irc.freenode.net #ooc-lang"
       echo ""
-      echo "- Mark Fayngersh (@gmaster1440)"
+      echo "- Mark Fayngersh (@pheuter)"
       echo "========================================"
   fi
 }
