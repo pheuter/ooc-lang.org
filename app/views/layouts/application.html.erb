@@ -5,9 +5,11 @@
 <head>
 	<title>ooc</title>
 	<link rel="stylesheet" type="text/css" media="screen, projection" href="/css/screen.css" />
+	<link href="/facebox/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
 	<%= csrf_meta_tag %>
 	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.2.min.js" ></script>
 	<script type="text/javascript" charset="utf-8" src="/js/jquery-syntax/jquery.syntax.min.js" ></script>
+  <script type="text/javascript" charset="utf-8" src="/facebox/facebox.js"></script>
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 	<script type="text/javascript">
 
@@ -20,6 +22,10 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
+	  
+	  jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox() 
+    })
 
 	</script>
 </head>

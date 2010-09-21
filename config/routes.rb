@@ -3,7 +3,6 @@ OocLang::Application.routes.draw do |map|
 
   root :to => "home#index"
   get "home/index"
-  get "getting_started/index"
   
   resources :posts
   resources :categories

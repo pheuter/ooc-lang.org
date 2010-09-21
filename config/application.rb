@@ -42,12 +42,5 @@ module OocLang
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-
-    #ad-hoc redirections (for bootstrap)
-    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      r301 '/boots', 'http://github.com/downloads/nddrylliog/rock/rock-0.9.2-prealpha12-bootstrap-only.tar.bz2', :if => Proc.new {|rack_env|
-        rack_env['SERVER_NAME'] != 'github.com'
-      }
-    end
   end
 end
