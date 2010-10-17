@@ -9,7 +9,7 @@
 			
 				<h3><%= link_to post.title, post %></h3>		
 				<%= raw post.content %>
-				<div class="meta"><%= post.created_at.strftime('%a %d %b, %Y') %> by <%= post.author %></div>
+				<div class="meta"><%= post.created_at.strftime('%a %d %b, %Y') %> by <%= post.author.name %></div>
 			
 			</div><!-- end .post -->
 			<% end %>	
