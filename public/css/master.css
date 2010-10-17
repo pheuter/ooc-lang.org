@@ -139,11 +139,11 @@ a:hover {
 ------------------------------------------------------------- */
 
 .featured {
-	height: 338px !important;
+	height: 338px !important; /* was 338 */
 }
 
 .featured .item {
-	padding: 45px 45px 30px;
+	padding: 10px 45px 30px; /* was 45 */
 	overflow: visible !important;
 }
 
@@ -1107,12 +1107,13 @@ ul.project-nav li:hover a, ul.project-nav li a.current {
 }
 /* ------------------Manual CSS Tweaks------------------------ */
 #introHeader {
+  color: #1C76A7;
   font-family: 'Inconsolata', serif;
   font-size: 42px;
 }
 
 #introText {
-  color:black;
+  color:gray;
   font-family: 'Inconsolata', serif;
   font-size: 16px;
   font-style: normal;
@@ -1130,6 +1131,7 @@ ul.project-nav li:hover a, ul.project-nav li a.current {
 pre.textmate-source {
   float: left;
 	margin: 0;
+	padding-top:30px;
   padding-right:20px;
   padding-botton:10px;
 	font-family: Monaco, monospace;
