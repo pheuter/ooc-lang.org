@@ -1,7 +1,7 @@
 class ChangePostToSupportUserType < ActiveRecord::Migration
   def self.up
     change_table :posts do |t|
-      t.reference :author
+      t.references :author
     end
   end
 
