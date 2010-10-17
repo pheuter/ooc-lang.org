@@ -4,12 +4,12 @@ one:
   title: MyString
   content: MyText
   markdown: MyText
-  author: 
+  user: 
   category: 
 
 two:
   title: MyString
   content: MyText
   markdown: MyText
-  author: 
+  user: 
   category: 

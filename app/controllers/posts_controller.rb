@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.category = Category.where(:id => params[:category][:id])[0]
-    @post.author = current_user
+    @post.user = current_user
     @post.content = RDiscount.new(params[:post][:markdown]).to_html
     
     respond_to do |format|
