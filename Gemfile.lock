@@ -1,3 +1,10 @@
+GIT
+  remote: http://github.com/rails/dynamic_form.git
+  revision: ebb03213ef8268e24c60e5e162b811d199777227
+  specs:
+    dynamic_form (1.0.0)
+      rails (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -79,6 +86,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (= 1.1.rc2)
+  dynamic_form!
   hpricot
   rack-rewrite
   rails (= 3.0.0)
