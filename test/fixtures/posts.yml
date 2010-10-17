@@ -2,12 +2,14 @@
 
 one:
   title: MyString
-  author: MyString
-  category: 
   content: MyText
+  markdown: MyText
+  author: 
+  category: 
 
 two:
   title: MyString
-  author: MyString
-  category: 
   content: MyText
+  markdown: MyText
+  author: 
+  category: 

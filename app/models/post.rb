@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :title, :category, :markdown
+  validates :title, :presence => true
+  validates :category, :presence => true
+  validates :markdown, :presence => true
+  belongs_to :author
   belongs_to :category
-  has_one :user
 end
