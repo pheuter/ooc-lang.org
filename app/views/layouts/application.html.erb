@@ -41,7 +41,7 @@
 			<li><%= link_to 'Blog', posts_path %></li>
 			<li><%= link_to 'Resources', "http://github.com/ooc-lang/Resources/wiki" %></li>
 			<% if user_signed_in? %>
-			<li><%= link_to "Sign out #{current_user.email.match(/(.+)@/)[1]}", destroy_user_session_path %>
+			<li><%= link_to "Sign out #{current_user.name}", destroy_user_session_path %>
 			<% else %>
 			<li><%= link_to "Sign in", new_user_session_path %></li>
 			<% end %>
