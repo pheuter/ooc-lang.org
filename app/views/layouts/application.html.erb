@@ -6,6 +6,7 @@
 	<title>ooc</title>
 	<link rel="stylesheet" type="text/css" media="screen, projection" href="/css/screen.css" />
 	<link href="/css/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata&subset=latin' rel='stylesheet' type='text/css'>
 	<%= csrf_meta_tag %>
 	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.2.min.js" ></script>
 	<script type="text/javascript" charset="utf-8" src="/js/jquery-syntax/jquery.syntax.min.js" ></script>
@@ -85,7 +86,7 @@
 </div><!-- end .container -->
 
 <script type="text/javascript" charset="utf-8">
-	$($.find("pre")).addClass("syntax ooc");
+	// $($.find("pre")).addClass("syntax ooc");
 	$($.find("code")).addClass("syntax ooc");
 	jQuery(function($) {
 	    $.syntax({root: "/js/jquery-syntax/"});

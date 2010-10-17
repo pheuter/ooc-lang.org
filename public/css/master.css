@@ -1105,3 +1105,164 @@ ul.project-nav li:hover a, ul.project-nav li a.current {
   font-size: 12px;
   list-style: square;
 }
+/* ------------------Manual CSS Tweaks------------------------ */
+#introHeader {
+  font-family: 'Inconsolata', serif;
+  font-size: 42px;
+}
+
+#introText {
+  color:black;
+  font-family: 'Inconsolata', serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 1em;
+}
+
+
+/* ------------------TextMate code style------------------------ */
+pre.textmate-source {
+  float: left;
+	margin: 0;
+  padding-right:20px;
+  padding-botton:10px;
+	font-family: Monaco, monospace;
+	font-size: 12px;
+	line-height: 1.3em;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+}
+
+pre.textmate-source.lazy {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+pre.textmate-source .linenum {
+	width: 75px;
+	padding: 0.1em 1em 0.2em 0;
+	color: #888;
+	background-color: #eee;
+}
+pre.textmate-source.lazy span {
+   padding-top: 0.2em;
+   padding-bottom: 0.1em;
+}
+pre.textmate-source.lazy ::selection {
+	background-color: #E3FC8D;
+}
+/* Comment */
+pre.textmate-source.lazy .comment {
+	color: #8C868F;
+}
+
+/* Constant */
+pre.textmate-source.lazy .constant {
+	color: #3B5BB5;
+}
+
+/* Entity */
+pre.textmate-source.lazy .entity {
+	color: #3B5BB5;
+}
+
+/* Latex Entity */
+pre.textmate-source.lazy .text_tex_latex .entity {
+	color: #D62A28;
+}
+
+/* Keyword */
+pre.textmate-source.lazy .keyword, pre.textmate-source.lazy .storage {
+	color: #FF7800;
+}
+
+/* String */
+pre.textmate-source.lazy .string, pre.textmate-source.lazy .meta_verbatim {
+	color: #409B1C;
+}
+
+/* Support */
+pre.textmate-source.lazy .support {
+	color: #3B5BB5;
+}
+
+/* Variable */
+pre.textmate-source.lazy .variable {
+}
+
+/* Invalid – Deprecated */
+pre.textmate-source.lazy .invalid_deprecated {
+	color: #990000;
+	font-style: italic;
+}
+
+/* Invalid – Illegal */
+pre.textmate-source.lazy .invalid_illegal {
+	color: #F8F8F8;
+	background-color: #9D1E15;
+}
+
+/* Superclass */
+pre.textmate-source.lazy .entity_other_inherited-class {
+	color: #3B5BB5;
+	font-style: italic;
+}
+
+/* String interpolation */
+pre.textmate-source.lazy .string .constant_other_placeholder {
+	color: #671EBB;
+}
+
+/* meta.function-call.py */
+pre.textmate-source.lazy .meta_function-call_py {
+	color: #3E4558;
+}
+
+/* meta.tag */
+pre.textmate-source.lazy .meta_tag, pre.textmate-source.lazy .meta_tag .entity {
+	color: #3A4A64;
+}
+
+/* OCaml variant */
+pre.textmate-source.lazy .keyword_type_variant {
+	color: #7F90AA;
+}
+
+/* OCaml operator */
+pre.textmate-source.lazy .source_ocaml .keyword_operator {
+	color: #000000;
+}
+
+/* OCaml infix operator */
+pre.textmate-source.lazy .source_ocaml .keyword_operator_symbol_infix {
+	color: #3B5BB5;
+}
+
+/* OCaml prefix operator */
+pre.textmate-source.lazy .source_ocaml .keyword_operator_symbol_prefix {
+	color: #3B5BB5;
+}
+
+/* OCaml infix f-p operator */
+pre.textmate-source.lazy .source_ocaml .keyword_operator_symbol_infix_floating-point {
+	text-decoration: underline;
+}
+
+/* OCaml prefix f-p operator */
+pre.textmate-source.lazy .source_ocaml .keyword_operator_symbol_prefix_floating-point {
+	text-decoration: underline;
+}
+
+/* OCaml f-p constant */
+pre.textmate-source.lazy .source_ocaml .constant_numeric_floating-point {
+	text-decoration: underline;
+}
